@@ -2,6 +2,8 @@ Ezmodeling::Application.routes.draw do
   resources :ezpieces
 
   resources :ezprojects
+  
+  root :to => 'ezprojects#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
