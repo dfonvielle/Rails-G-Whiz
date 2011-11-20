@@ -42,11 +42,10 @@ class EzpiecesController < ApplicationController
   # POST /ezpieces.json
   def create
     @ezpiece = Ezpiece.new(params[:ezpiece])
-    @ezproject = Ezproject.find_by_id(params[:ezproject_id])
 
     respond_to do |format|
       if @ezpiece.save
-        format.html { redirect_to ezpieces_url, notice: 'New piece was successfully created.' }
+        format.html { redirect_to ezproject_url(@ezpiece.ezproject_id), notice: "New piece called #{@ezpiece.ezname} was successfully created." }
         format.json { render json: @ezpiece, status: :created, location: @ezpiece }
       else
         format.html { render action: "new" }

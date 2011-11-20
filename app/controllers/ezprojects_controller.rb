@@ -13,6 +13,9 @@ class EzprojectsController < ApplicationController
   # GET /ezprojects/1
   # GET /ezprojects/1.json
   def show
+    
+# Am coming to this show page also via the create new piece/redirect way...
+# Am surprised this works without find_by_id so consider that possibly in future
     @ezproject = Ezproject.find(params[:id])
     @ezpieces = @ezproject.ezpieces
 
