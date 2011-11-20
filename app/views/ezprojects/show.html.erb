@@ -1,0 +1,31 @@
+<p>
+  <b>Name:</b>
+  <%= @ezproject.ezname %>
+</p>
+
+<p>
+  <b>MVP:</b>
+  <%= @ezproject.ezmvp %>
+</p>
+
+<p>
+  <b>Business Logic:</b>
+  <%= @ezproject.ezbuslogic %>
+</p>
+
+<p>
+  <b>User Stories:</b>
+  <%= @ezproject.ezuserstories %>
+</p>
+
+<p>
+  <%= "*** Use your business logic and user stories to identify the " %> <%= link_to "pieces of your project " %> <%= "that will bring your rails app and project to life.***" %> 
+  <p><%= link_to "Add New Piece", new_ezpiece_url(:id => @ezproject.id) %></p>
+</p>
+
+
+<%= render "ezpieces/ezpieces" %>
+
+
+<%= link_to 'Edit', edit_ezproject_path(@ezproject) %>
+<%= link_to 'Back', ezprojects_path %>

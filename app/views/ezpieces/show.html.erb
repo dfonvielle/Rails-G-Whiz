@@ -1,0 +1,54 @@
+
+<p>
+  <b>Name:</b>
+  <%= @ezpiece.ezname %>
+</p>
+
+<p>
+  <b>Controller:</b>
+  <%= @ezpiece.ezcontroller %>
+</p>
+
+<p>
+  <b>Model:</b>
+  <%= @ezpiece.ezmodel %>
+</p>
+
+<p>
+  <b>View:</b>
+  <%= @ezpiece.ezview %>
+</p>
+
+<p>
+  <b>Db:</b>
+  <%= @ezpiece.ezdb %>
+</p>
+
+<p>
+  <b>Seed:</b>
+  <%= @ezpiece.ezseed %>
+</p>
+
+<p>
+  <b>Attributes:</b>
+  <%= @ezpiece.ezattributes %>
+</p>
+
+<p>
+  <b>Resources:</b>
+  <%= @ezpiece.ezresources %>
+</p>
+
+<p>
+  <b>Relationships:</b>
+  <%= @ezpiece.ezrelationships %>
+</p>
+
+<p>
+  <b>Project:</b>
+  <%= @ezpiece.ezproject.ezname %>
+</p>
+
+
+<%= link_to 'Edit', edit_ezpiece_path(@ezpiece) %> |
+<%= link_to 'Back', ezpieces_path %>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  ezuser_id: 1
+  ezname: MyString
+  ezmvp: MyString
+  ezbuslogic: MyText
+  ezuserstories: MyText
+
+two:
+  ezuser_id: 1
+  ezname: MyString
+  ezmvp: MyString
+  ezbuslogic: MyText
+  ezuserstories: MyText

@@ -1,0 +1,56 @@
+<%= form_for(@ezpiece) do |f| %>
+  <% if @ezpiece.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ezpiece.errors.count, "error") %> prohibited this ezpiece from being saved:</h2>
+
+      <ul>
+      <% @ezpiece.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :ezname %>
+  </div>
+  <div class="field">
+    <%= f.label :controller %><br />
+    <%= f.check_box :ezcontroller %>
+  </div>
+  <div class="field">
+    <%= f.label :model %><br />
+    <%= f.check_box :ezmodel %>
+  </div>
+  <div class="field">
+    <%= f.label :view %><br />
+    <%= f.check_box :ezview %>
+  </div>
+  <div class="field">
+    <%= f.label :db %><br />
+    <%= f.check_box :ezdb %>
+  </div>
+  <div class="field">
+    <%= f.label :seed %><br />
+    <%= f.check_box :ezseed %>
+  </div>
+  <div class="field">
+    <%= f.label :attributes %><br />
+    <%= f.text_area :ezattributes %>
+  </div>
+  <div class="field">
+    <%= f.label :resources %><br />
+    <%= f.text_area :ezresources %>
+  </div>
+  <div class="field">
+    <%= f.label :relationships %><br />
+    <%= f.text_area :ezrelationships %>
+  </div>
+  <div class="hidden field">
+    <%= f.hidden_field :ezproject_id, :value => @ezproject.id %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Create a New Piece for #{@ezproject.ezname} project"%>
+  </div>
+<% end %>

@@ -1,0 +1,34 @@
+<%= form_for(@ezproject) do |f| %>
+  <% if @ezproject.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ezproject.errors.count, "error") %> prohibited this ezproject from being saved:</h2>
+
+      <ul>
+      <% @ezproject.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :ezname %>
+  </div>
+  <div class="field">
+    <%= f.label :mvp %><br />
+    <%= f.text_field :ezmvp %>
+  </div>
+  <div class="field">
+    <%= f.label :business_logic %><br />
+    <%= f.text_area :ezbuslogic %>
+  </div>
+  <div class="field">
+    <%= f.label :user_stories %><br />
+    <%= f.text_area :ezuserstories %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Make It So"%>
+  </div>
+<% end %>

@@ -1,0 +1,76 @@
+<h1>Project Pieces</h1>
+
+<p>
+  <b>All Pieces</b></br>
+    <% @ezpieces.each do |ezpiece| %>
+      <% if ezpiece.ezcontroller %>
+        <li><%= ezpiece.ezname %></li>
+      <% end %>
+    <% end %>
+<p>
+
+<p>
+  <b>Controller</b></br>
+    <% @ezpieces.each do |ezpiece| %>
+      <% if ezpiece.ezcontroller %>
+        <li><%= ezpiece.ezname %></li>
+      <% end %>
+    <% end %>
+<p>
+  
+<p>
+  <b>Model</b></br>
+    <% @ezpieces.each do |ezpiece| %>
+      <% if ezpiece.ezmodel %>
+        <li><%= ezpiece.ezname %></li>
+      <% end %>
+    <% end %>
+<p>
+  
+
+<p>
+  <b>View</b></br>
+    <% @ezpieces.each do |ezpiece| %>
+      <% if ezpiece.ezview %>
+        <li><%= ezpiece.ezname %></li>
+      <% end %>
+    <% end %>
+<p>
+ 
+
+
+
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>DB-Backed</th>
+    <th>Seed</th>
+    <th>Attributes</th>
+    <th>Resources</th>
+    <th>Relationships</th>
+    <th>Project</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ezpieces.each do |ezpiece| %>
+  <tr>
+    <td><%= ezpiece.ezname %></td>
+    <td><%= ezpiece.ezdb %></td>
+    <td><%= ezpiece.ezseed %></td>
+    <td><%= ezpiece.ezattributes %></td>
+    <td><%= ezpiece.ezresources %></td>
+    <td><%= ezpiece.ezrelationships %></td>
+    <td><%= ezpiece.ezproject_id %></td>
+    <td><%= link_to 'Show', ezpiece %></td>
+    <td><%= link_to 'Edit', edit_ezpiece_path(ezpiece) %></td>
+    <td><%= link_to 'Destroy', ezpiece, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Ezpiece', new_ezpiece_path %>

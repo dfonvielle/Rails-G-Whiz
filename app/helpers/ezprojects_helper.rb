@@ -1,0 +1,2 @@
+module EzprojectsHelper
+end
