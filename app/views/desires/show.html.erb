@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @desire.user %>
+</p>
+
+<p>
+  <b>Business:</b>
+  <%= @desire.business %>
+</p>
+
+<p>
+  <b>Done:</b>
+  <%= @desire.done %>
+</p>
+
+
+<%= link_to 'Edit', edit_desire_path(@desire) %> |
+<%= link_to 'Back', desires_path %>

@@ -1,0 +1,27 @@
+<h1>Listing desires</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Business</th>
+    <th>Done</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @desires.each do |desire| %>
+  <tr>
+    <td><%= desire.user %></td>
+    <td><%= desire.business %></td>
+    <td><%= desire.done %></td>
+    <td><%= link_to 'Show', desire %></td>
+    <td><%= link_to 'Edit', edit_desire_path(desire) %></td>
+    <td><%= link_to 'Destroy', desire, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Desire', new_desire_path %>

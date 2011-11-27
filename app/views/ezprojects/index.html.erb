@@ -11,8 +11,8 @@
 
 <% @ezprojects.each do |ezproject| %>
   <tr>
-    <td><%= link_to ezproject.ezname, ezproject %></td>
-    <td><%= ezproject.ezmvp %></td>
+    <td><%= link_to ezproject.name, ezproject %></td>
+    <td><%= ezproject.mvp %></td>
     <td><%= button_to 'Edit', edit_ezproject_path(ezproject), :method => :get %></td>
     <td><%= button_to 'Destroy', ezproject, confirm: 'Are you sure?', method: :delete %></td>
   </tr>

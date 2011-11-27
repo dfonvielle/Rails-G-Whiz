@@ -1,0 +1,29 @@
+<%= form_for(@desire) do |f| %>
+  <% if @desire.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@desire.errors.count, "error") %> prohibited this desire from being saved:</h2>
+
+      <ul>
+      <% @desire.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user %><br />
+    <%= f.text_field :user %>
+  </div>
+  <div class="field">
+    <%= f.label :business %><br />
+    <%= f.text_field :business %>
+  </div>
+  <div class="field">
+    <%= f.label :done %><br />
+    <%= f.check_box :done %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
