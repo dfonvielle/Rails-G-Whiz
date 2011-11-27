@@ -7,3 +7,5 @@ class AddDesireIdToEzprojects < ActiveRecord::Migration
     
   end
 end
+
+
