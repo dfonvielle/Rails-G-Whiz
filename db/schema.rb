@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111127234709) do
+ActiveRecord::Schema.define(:version => 20111128001044) do
 
   create_table "desires", :force => true do |t|
     t.string   "description"
@@ -46,6 +46,29 @@ ActiveRecord::Schema.define(:version => 20111127234709) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "desire_id"
+  end
+
+  create_table "parts", :force => true do |t|
+    t.integer  "project_id"
+    t.string   "name"
+    t.string   "description"
+    t.boolean  "controller_role"
+    t.boolean  "model_role"
+    t.boolean  "view_role"
+    t.boolean  "seed_role"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "projects", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "mvp"
+    t.string   "github"
+    t.string   "heroku"
+    t.string   "mockup"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

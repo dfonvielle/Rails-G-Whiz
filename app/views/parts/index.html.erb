@@ -1,0 +1,35 @@
+<h1>Listing parts</h1>
+
+<table>
+  <tr>
+    <th>Project</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Controller role</th>
+    <th>Model role</th>
+    <th>View role</th>
+    <th>Seed role</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @parts.each do |part| %>
+  <tr>
+    <td><%= part.project_id %></td>
+    <td><%= part.name %></td>
+    <td><%= part.description %></td>
+    <td><%= part.controller_role %></td>
+    <td><%= part.model_role %></td>
+    <td><%= part.view_role %></td>
+    <td><%= part.seed_role %></td>
+    <td><%= link_to 'Show', part %></td>
+    <td><%= link_to 'Edit', edit_part_path(part) %></td>
+    <td><%= link_to 'Destroy', part, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Part', new_part_path %>

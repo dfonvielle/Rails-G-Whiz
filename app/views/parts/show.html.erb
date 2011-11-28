@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Project:</b>
+  <%= @part.project_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @part.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @part.description %>
+</p>
+
+<p>
+  <b>Controller role:</b>
+  <%= @part.controller_role %>
+</p>
+
+<p>
+  <b>Model role:</b>
+  <%= @part.model_role %>
+</p>
+
+<p>
+  <b>View role:</b>
+  <%= @part.view_role %>
+</p>
+
+<p>
+  <b>Seed role:</b>
+  <%= @part.seed_role %>
+</p>
+
+
+<%= link_to 'Edit', edit_part_path(@part) %> |
+<%= link_to 'Back', parts_path %>

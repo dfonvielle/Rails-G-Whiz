@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @project.user_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @project.name %>
+</p>
+
+<p>
+  <b>Mvp:</b>
+  <%= @project.mvp %>
+</p>
+
+<p>
+  <b>Github:</b>
+  <%= @project.github %>
+</p>
+
+<p>
+  <b>Heroku:</b>
+  <%= @project.heroku %>
+</p>
+
+<p>
+  <b>Mockup:</b>
+  <%= @project.mockup %>
+</p>
+
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>

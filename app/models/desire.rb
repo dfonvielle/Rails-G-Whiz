@@ -1,6 +1,6 @@
 class Desire < ActiveRecord::Base
   
-  belongs_to :ezproject
+  belongs_to :project
   
   
 end
