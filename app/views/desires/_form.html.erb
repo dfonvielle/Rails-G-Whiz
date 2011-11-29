@@ -11,19 +11,26 @@
     </div>
   <% end %>
 
+
   <div class="field">
-    <%= f.label :user %><br />
-    <%= f.text_field :user %>
+    <% if @desire.desire_type == "User Stories" %>
+      <%= f.label :description, "As a user, I want..." %><br />
+    <% else %>
+      <%= f.label :description, "As a business owner, I want..." %><br />
+    <% end %>
+    <%= f.text_field :description %>
   </div>
+
+  <div class="hidden field">
+    <%= f.hidden_field :desire_type, :value => @desire.desire_type %>
+  </div>
+  
   <div class="field">
-    <%= f.label :business %><br />
-    <%= f.text_field :business %>
+    <%= f.hidden_field :project_id, :value => @desire.project_id %>
   </div>
-  <div class="field">
-    <%= f.label :done %><br />
-    <%= f.check_box :done %>
-  </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>
+  
 <% end %>

@@ -1,9 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>User:</b>
-  <%= @project.user_id %>
-</p>
 
 <p>
   <b>Name:</b>
@@ -11,24 +7,26 @@
 </p>
 
 <p>
-  <b>Mvp:</b>
+  <b>MVP:</b>
   <%= @project.mvp %>
 </p>
 
 <p>
-  <b>Github:</b>
-  <%= @project.github %>
+  <b>User Stories:</b>
+  <%= link_to "create new", new_desire_path(:desire_type => "User Stories", :project_id => @project.id) %>
 </p>
 
 <p>
-  <b>Heroku:</b>
-  <%= @project.heroku %>
+  <b>Business Logic:</b>
+  <%= link_to "create new", new_desire_path(:desire_type => "Business Logic", :project_id => @project.id) %>
 </p>
 
 <p>
   <b>Mockup:</b>
   <%= @project.mockup %>
 </p>
+
+
 
 
 <%= link_to 'Edit', edit_project_path(@project) %> |

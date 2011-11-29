@@ -25,7 +25,9 @@ class DesiresController < ApplicationController
   # GET /desires/new.json
   def new
     @desire = Desire.new
-
+    @desire.desire_type = params[:desire_type]
+    @desire.project_id = params[:project_id]
+    
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @desire }
@@ -42,9 +44,10 @@ class DesiresController < ApplicationController
   def create
     @desire = Desire.new(params[:desire])
 
+
     respond_to do |format|
       if @desire.save
-        format.html { redirect_to @desire, notice: 'Desire was successfully created.' }
+        format.html { redirect_to project_path(@desire.project), notice: 'Desire was successfully created.' }
         format.json { render json: @desire, status: :created, location: @desire }
       else
         format.html { render action: "new" }
