@@ -14,11 +14,39 @@
 <p>
   <b>User Stories:</b>
   <%= link_to "create new", new_desire_path(:desire_type => "User Stories", :project_id => @project.id) %>
+  
+  <% if @desires.user_stories.blank? %>
+    <blockquote><%= "No user stories! Create some to give your rails app a clear sense of direction and help you plan it." %></blockquote>
+    
+  <% else %>
+  
+    <% @desires.user_stories.each do |desire| %>
+      <ul>
+        <li><%= desire.description %></li>
+      </ul>
+    <% end %>
+  
+  <% end %>
+  
 </p>
 
 <p>
   <b>Business Logic:</b>
   <%= link_to "create new", new_desire_path(:desire_type => "Business Logic", :project_id => @project.id) %>
+ 
+  <% if @desires.business_logic.blank? %>
+    <blockquote><%= "Optional but helpful." %></blockquote>
+    
+  <% else %>
+  
+    <% @desires.business_logic.each do |desire| %>
+      <ul>
+        <li><%= desire.description %></li>
+      </ul>
+    <% end %>
+  
+  <% end %>
+
 </p>
 
 <p>

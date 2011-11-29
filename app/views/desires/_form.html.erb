@@ -14,9 +14,9 @@
 
   <div class="field">
     <% if @desire.desire_type == "User Stories" %>
-      <%= f.label :description, "As a user, I want..." %><br />
+      <%= f.label :description, "As a user, I want to..." %><br />
     <% else %>
-      <%= f.label :description, "As a business owner, I want..." %><br />
+      <%= f.label :description, "As a business owner, I want to..." %><br />
     <% end %>
     <%= f.text_field :description %>
   </div>
@@ -30,7 +30,7 @@
   </div>
   
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Make It So" %>
   </div>
   
 <% end %>
