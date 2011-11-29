@@ -22,7 +22,12 @@
   
     <% @desires.user_stories.each do |desire| %>
       <ul>
-        <li><%= desire.description %></li>
+        <li>
+          <%= desire.description %>
+          <%= check_box_tag desire.done %>
+          <%= link_to "Edit", edit_desire_path(desire.id) %>
+          <%= link_to "Delete", desire, :confirm => "You sure about this?", :method => :delete %>
+        </li>
       </ul>
     <% end %>
   
@@ -41,7 +46,12 @@
   
     <% @desires.business_logic.each do |desire| %>
       <ul>
-        <li><%= desire.description %></li>
+        <li>
+          <%= desire.description %>
+          <%= check_box_tag desire.done %>
+          <%= link_to "Edit", edit_desire_path(desire.id) %>
+          <%= link_to "Delete" %>
+        </li>
       </ul>
     <% end %>
   
