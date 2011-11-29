@@ -47,7 +47,7 @@ class DesiresController < ApplicationController
 
     respond_to do |format|
       if @desire.save
-        format.html { redirect_to project_path(@desire.project), notice: 'Desire was successfully created.' }
+        format.html { redirect_to project_path(@desire.project), :notice => "You successfully added a new item to #{@desire.desire_type}"}
         format.json { render json: @desire, status: :created, location: @desire }
       else
         format.html { render action: "new" }
@@ -63,7 +63,7 @@ class DesiresController < ApplicationController
 
     respond_to do |format|
       if @desire.update_attributes(params[:desire])
-        format.html { redirect_to @desire, notice: 'Desire was successfully updated.' }
+        format.html { redirect_to project_url(@desire.project_id), notice: "#{@desire.desire_type} successfully updated." }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
@@ -76,10 +76,11 @@ class DesiresController < ApplicationController
   # DELETE /desires/1.json
   def destroy
     @desire = Desire.find(params[:id])
+    projectid = @desire.project_id
     @desire.destroy
 
     respond_to do |format|
-      format.html { redirect_to projects_url }
+      format.html { redirect_to project_url(projectid), :notice => "You successfully deleted your item." }
       format.json { head :ok }
     end
   end
