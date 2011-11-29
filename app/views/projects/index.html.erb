@@ -14,7 +14,7 @@
 
 <% @projects.each do |project| %>
   <tr>
-    <td><%= project.name %></td>
+    <td><%= link_to project.name, project %></td>
     <td><%= project.mvp %></td>
       
       <% if project.github.blank? %>
