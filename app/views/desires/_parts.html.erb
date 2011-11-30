@@ -1,0 +1,25 @@
+<p>
+  <b>Parts:</b>
+  <%= link_to "Identify a new part", new_part_url(:project_id => @project.id) %>
+  <%= "for #{@project.name} based off of your user stories and business logic." %>
+  
+  <% if @parts.blank? %>
+    <blockquote><%= "-- How are you going to create a rails app without any identifiable parts, Sparky? --" %></blockquote>
+    
+  <% else %>
+  
+    <% @parts.each do |part| %>
+      <ul>
+        <li>
+          <%= "#{part.name}: #{part.description}" %>
+          <%= link_to "Edit", edit_part_path(part.id) %>
+          <%= link_to "Delete", part, :confirm => "Really want to part ways with your rails part?", :method => :delete %>
+        </li>
+      </ul>
+    <% end %>
+  
+  <% end %>
+
+
+  
+</p>

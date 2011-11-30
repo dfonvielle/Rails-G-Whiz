@@ -1,0 +1,23 @@
+<p>
+  <b>Controllers:</b>
+  <%= "Identify a part of #{@project.name} as a controller, and you'll see it here." %>
+  
+  <% if @controllers.blank? %>
+    <blockquote><%= "-- Controllers are brains. Where are the brains of the operation, Sparky? --" %></blockquote>
+    
+  <% else %>
+  
+    <% @controllers.each do |controller| %>
+      <ul>
+        <li>
+          <%= "#{controller.name}: TBD how the controller carries out stuff and provides value to the user" %>
+          <%= link_to "Edit"%>
+          <%= link_to "Delete"%>
+        </li>
+      </ul>
+    <% end %>
+  
+  <% end %>  
+  
+  
+</p>

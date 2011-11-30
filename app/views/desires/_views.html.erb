@@ -1,0 +1,23 @@
+<p>
+  <b>Views:</b>
+  <%= "Identify a part of #{@project.name} as a provided view, and you'll see it here." %>
+  
+  <% if @views.blank? %>
+    <blockquote><%= "-- There's no show, if you're not providing anything to see! Whatcha got worth seeing, and how're we gonna see it, Sparky? --" %></blockquote>
+    
+  <% else %>
+  
+    <% @views.each do |view| %>
+      <ul>
+        <li>
+          <%= "#{view.name}: TBD how the view is seen and accessed" %>
+          <%= link_to "Edit"%>
+          <%= link_to "Delete"%>
+        </li>
+      </ul>
+    <% end %>
+  
+  <% end %>  
+
+
+</p>
