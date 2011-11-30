@@ -50,7 +50,7 @@
           <%= desire.description %>
           <%= check_box_tag desire.done %>
           <%= link_to "Edit", edit_desire_path(desire.id) %>
-          <%= link_to "Delete" %>
+          <%= link_to "Delete", desire, :confirm => "You sure about this?", :method => :delete %>
         </li>
       </ul>
     <% end %>
@@ -60,10 +60,50 @@
 </p>
 
 <p>
-  <b>Mockup:</b>
-  <%= @project.mockup %>
+  <b>Parts:</b>
+  <%= link_to "Identify a new part", new_part_url(:project_id => @project.id) %>
+  <%= "for #{@project.name} based off of your user stories and business logic." %>
+  
+  <% if @parts.blank? %>
+    <blockquote><%= "-- How are you going to create a rails app without any identifiable parts, Sparky? --" %></blockquote>
+    
+  <% else %>
+  
+    <% @parts.each do |part| %>
+      <ul>
+        <li>
+          <%= "#{part.name}: #{part.description}" %>
+          <%= link_to "Edit", edit_part_path(part.id) %>
+          <%= link_to "Delete", part, :confirm => "Really want to part ways with your rails part?", :method => :delete %>
+        </li>
+      </ul>
+    <% end %>
+  
+  <% end %>
+
+
+  
 </p>
 
+<p>
+  <b>Controllers:</b>
+  <%= "Identify a part of #{@project.name} as a controller, and you'll see it here." %>
+</p>
+
+<p>
+  <b>Models:</b>
+  <%= "Identify a part of #{@project.name} as a model, and you'll see it here." %>
+</p>
+
+<p>
+  <b>Views:</b>
+  <%= "Identify a part of #{@project.name} as a provided view, and you'll see it here." %>
+</p>
+
+<p>
+  <b>Relationships:</b>
+  <%= "Identify a part of #{@project.name} as a model, and you'll be able to figure out its relationship to other models here." %>
+</p>
 
 
 

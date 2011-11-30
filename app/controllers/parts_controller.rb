@@ -25,6 +25,7 @@ class PartsController < ApplicationController
   # GET /parts/new.json
   def new
     @part = Part.new
+    @part.project_id = params[:project_id]
 
     respond_to do |format|
       format.html # new.html.erb
@@ -44,7 +45,7 @@ class PartsController < ApplicationController
 
     respond_to do |format|
       if @part.save
-        format.html { redirect_to @part, notice: 'Part was successfully created.' }
+        format.html { redirect_to project_url(@part.project_id), notice: 'Part was successfully created.' }
         format.json { render json: @part, status: :created, location: @part }
       else
         format.html { render action: "new" }
@@ -60,7 +61,7 @@ class PartsController < ApplicationController
 
     respond_to do |format|
       if @part.update_attributes(params[:part])
-        format.html { redirect_to @part, notice: 'Part was successfully updated.' }
+        format.html { redirect_to project_url(@part.project_id), notice: 'Part was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
@@ -73,10 +74,11 @@ class PartsController < ApplicationController
   # DELETE /parts/1.json
   def destroy
     @part = Part.find(params[:id])
+    projectid = @part.project_id
     @part.destroy
 
     respond_to do |format|
-      format.html { redirect_to parts_url }
+      format.html { redirect_to project_url(projectid), :notice => "You destroyed a part of your rails app. The horror! The horror!" }
       format.json { head :ok }
     end
   end

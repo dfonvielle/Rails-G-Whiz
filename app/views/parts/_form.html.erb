@@ -11,9 +11,8 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :project_id %><br />
-    <%= f.number_field :project_id %>
+  <div class="hidden field">
+    <%= f.hidden_field :project_id, :value => @part.project_id %>
   </div>
   <div class="field">
     <%= f.label :name %><br />

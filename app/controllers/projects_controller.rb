@@ -15,6 +15,7 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     @desires = @project.desires
+    @parts = @project.parts
 
     respond_to do |format|
       format.html # show.html.erb

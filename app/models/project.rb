@@ -4,4 +4,6 @@ class Project < ActiveRecord::Base
   
   has_many :desires
   
+  has_many :parts
+  
 end
