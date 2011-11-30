@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 
 <p>
@@ -88,16 +87,73 @@
 <p>
   <b>Controllers:</b>
   <%= "Identify a part of #{@project.name} as a controller, and you'll see it here." %>
+  
+  <% if @controllers.blank? %>
+    <blockquote><%= "-- Controllers are brains. Where are the brains of the operation, Sparky? --" %></blockquote>
+    
+  <% else %>
+  
+    <% @controllers.each do |controller| %>
+      <ul>
+        <li>
+          <%= "#{controller.name}: TBD how the controller carries out stuff and provides value to the user" %>
+          <%= link_to "Edit"%>
+          <%= link_to "Delete"%>
+        </li>
+      </ul>
+    <% end %>
+  
+  <% end %>  
+  
+  
 </p>
 
 <p>
   <b>Models:</b>
   <%= "Identify a part of #{@project.name} as a model, and you'll see it here." %>
+  
+  <% if @models.blank? %>
+    <blockquote><%= "-- Rails is ideal for database-backed web apps. Where's your model that's got your back, Sparky? --" %></blockquote>
+    
+  <% else %>
+  
+    <% @models.each do |model| %>
+      <ul>
+        <li>
+          <%= "#{model.name}: TBD how the model has attributes" %>
+          <%= link_to "Edit"%>
+          <%= link_to "Delete"%>
+        </li>
+      </ul>
+    <% end %>
+  
+  <% end %>
+  
+  
 </p>
 
 <p>
   <b>Views:</b>
   <%= "Identify a part of #{@project.name} as a provided view, and you'll see it here." %>
+  
+  <% if @views.blank? %>
+    <blockquote><%= "-- There's no show, if you're not providing anything to see! Whatcha got worth seeing, and how're we gonna see it, Sparky? --" %></blockquote>
+    
+  <% else %>
+  
+    <% @views.each do |view| %>
+      <ul>
+        <li>
+          <%= "#{view.name}: TBD how the view is seen and accessed" %>
+          <%= link_to "Edit"%>
+          <%= link_to "Delete"%>
+        </li>
+      </ul>
+    <% end %>
+  
+  <% end %>  
+
+
 </p>
 
 <p>

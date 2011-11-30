@@ -16,7 +16,10 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @desires = @project.desires
     @parts = @project.parts
-
+    @controllers = @project.parts.app_controllers
+    @models = @project.parts.app_models
+    @views = @project.parts.app_views
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @project }

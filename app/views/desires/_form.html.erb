@@ -16,7 +16,7 @@
     <% if @desire.desire_type == "User Stories" %>
       <%= f.label :description, "As a user, I want to..." %><br />
     <% else %>
-      <%= f.label :description, "As a business owner, I want to..." %><br />
+      <%= f.label :description, "As a business owner and/or rails app developer, I want to..." %><br />
     <% end %>
     <%= f.text_field :description %>
   </div>
