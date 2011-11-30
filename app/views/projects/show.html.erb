@@ -3,6 +3,7 @@
 <p>
   <b>Name:</b>
   <%= @project.name %>
+  <%= link_to 'Edit', edit_project_path(@project) %>
 </p>
 
 <p>
@@ -10,21 +11,34 @@
   <%= @project.mvp %>
 </p>
 
-<%= render "desires/userstories" %>
 
-<%= render "desires/businesslogic" %>
+<% if @desires.blank? %>
 
-<%= render "desires/parts" %>
+  <%= "STEP 1: Enter user stories and business logic so that you'll know what you want to achieve with your rails app. In the next step, you'll identify parts of your rails app based off of the user stories and business logic that you enter." %>
+  <%= render "desires/userstories" %>
+  <%= render "desires/businesslogic" %>
+  
+<% elsif @parts.blank? %>
 
-<%= render "desires/controllers" %>
+  <%= "STEP 2: You have entered in user stories and/or business logic (a true value for desires), and you now have an opportunity to enter in your identified parts and identify them as models, views, or controllers.  This will help you start fleshing out the MVC view as you go along." %>
+  <%= render "desires/userstories" %>
+  <%= render "desires/businesslogic" %>
+  <%= render "desires/parts" %>
+    
+<% else %>
+    <%= "STEP3: All fleshed out! Now consider things like attributes and resources and things like that!" %>
+    
+    <%= render "desires/userstories" %>
+    <%= render "desires/businesslogic" %>
+    <%= render "desires/parts" %>
+    <%= render "desires/controllers" %>
+    <%= render "desires/models" %>
+    <%= render "desires/views" %>
+    <%= render "desires/relationships" %>
+    
+<% end %>
 
-<%= render "desires/models" %>
-
-<%= render "desires/views" %>
-
-<%= render "desires/relationships" %>
 
 
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+
