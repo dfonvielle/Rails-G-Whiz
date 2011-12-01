@@ -1,8 +1,11 @@
 <p>
-  <b>User Stories:</b>
-  <%= link_to "create new", new_desire_path(:desire_type => "User Stories", :project_id => @project.id) %>
-  
+
   <% if @desires.user_stories.blank? %>
+  
+    <h2>User Stories</h2>
+
+    <p><%= link_to "create new", new_desire_path(:desire_type => "User Stories", :project_id => @project.id) %></p>
+  
     <blockquote><%= "No user stories! Create some to give your rails app a clear sense of direction and help you plan it." %></blockquote>
     
   <% else %>
@@ -10,9 +13,11 @@
 
   <h2>User Stories</h2>
 
+  <p><%= link_to "create new", new_desire_path(:desire_type => "User Stories", :project_id => @project.id) %></p>
+
   <table>
     <tr>
-      <th>Done?</th>
+      <th></th>
       <th>As a user I want to...</th>
       <th></th>
       <th></th>
@@ -31,24 +36,7 @@
 
   <br />
 
-  <%= link_to 'New Project', new_ezproject_path %>
 
-
-
-
-
-
-  
-    <% @desires.user_stories.each do |desire| %>
-      <ul>
-        <li>
-          <%= desire.description %>
-          <%= check_box_tag desire.done %>
-          <%= link_to "Edit", edit_desire_path(desire.id) %>
-          <%= link_to "Delete", desire, :confirm => "You sure about this?", :method => :delete %>
-        </li>
-      </ul>
-    <% end %>
   
   <% end %>
   

@@ -6,20 +6,35 @@
   <%= @project.mvp %>
 </p>
 
+<% if @desires.blank? %>
+
+  <p>
+      <b>Priority:</b>
+    <%= "Enter user stories and business logic so that you'll know what you want to achieve with your rails app. In the next step, you'll identify parts of your rails app based off of the user stories and business logic that you enter." %>
+  </p>
+  
+  <% elsif @parts.blank? %>
+
+  <p>
+    <b>Priority:</b>
+    <%= "You have entered in user stories and/or business logic. Use this information to identify parts of your app and establish them as models, views, or controllers.  This will help you flesh out your MVC view as you go along." %>
+  </p>
+
+
+
+<% end %>
+
 
 <% if @desires.blank? %>
 
-  <p><%= "STEP 1: Enter user stories and business logic so that you'll know what you want to achieve with your rails app. In the next step, you'll identify parts of your rails app based off of the user stories and business logic that you enter." %></p>
-  <h1>Desired Achievements</h1>
   <%= render "desires/userstories" %>
   <%= render "desires/businesslogic" %>
   
 <% elsif @parts.blank? %>
 
-  <p><%= "STEP 2: You have entered in user stories and/or business logic (a true value for desires), and you now have an opportunity to enter in your identified parts and identify them as models, views, or controllers.  This will help you start fleshing out the MVC view as you go along." %></p>
   <%= render "desires/userstories" %>
   <%= render "desires/businesslogic" %>
-  <h1>Project Parts ("Things" That Bring Your Project to Life)</h1>  
+  <h2>Project Parts ("Things" That Bring Your Project to Life)</h2>  
   <%= render "desires/parts" %>
     
 <% else %>

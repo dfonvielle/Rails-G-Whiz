@@ -20,6 +20,7 @@ class ProjectsController < ApplicationController
     @models = @project.parts.app_models
     @views = @project.parts.app_views
     
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @project }
