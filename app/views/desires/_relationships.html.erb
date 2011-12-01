@@ -1,23 +1,47 @@
 <p>
-  <b>Relationships:</b>
-  <%= "Identify a part of #{@project.name} as a model, and you'll be able to figure out its relationship to other models here." %>
+
+  <% if @models.count < 2 %>
   
-  <% if @models.blank? %>
-    <blockquote><%= "-- Rails is ideal for database-backed web apps. Where's your model that's got your back, Sparky? --" %></blockquote>
+    <h1>Associations</h1>
+  
+      <blockquote><%= "When you identify two or more parts (inspired by your user stories and business logic) as models, they'll be listed here, and you can figure out what kind of relationships they have to one another, if any." %></blockquote>
+
     
   <% else %>
   
-    <% @models.each do |model| %>
-      <ul>
-        <li>
-          <%= "#{model.name}: TBD how the models are related/associated to one another" %>
-          <%= link_to "Edit"%>
-          <%= link_to "Delete"%>
-        </li>
-      </ul>
-    <% end %>
+
+  <h1>Associations</h1>
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Relationships to Other Models</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+
+  <% @models.each do |model| %>
+    <tr>
+      <td><%= model.name %></td>
+      <td><%="TBD" %></td>
+      <td><%= link_to "Edit" %></td>
+      <td><%= link_to "Delete"%></td>
+    </tr>
+  <% end %>
+  </table>
+
+  <br />
+
+
   
-  <% end %>  
-
-
+  <% end %>
+  
 </p>
+
+
+
+
+
+
+
