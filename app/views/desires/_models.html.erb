@@ -1,23 +1,41 @@
 <p>
-  <b>Models:</b>
-  <%= "Identify a part of #{@project.name} as a model, and you'll see it here." %>
-  
+
   <% if @models.blank? %>
-    <blockquote><%= "-- Rails is ideal for database-backed web apps. Where's your model that's got your back, Sparky? --" %></blockquote>
+  
+    <h2>Models</h2>
+  
+      <blockquote><%= "Rails is ideal for database-backed web apps. Where's your model that's got your back? Highly recommended that you identify at least one model (inspired by your user stories and business logic) ASAP." %></blockquote>
+
     
   <% else %>
   
-    <% @models.each do |model| %>
-      <ul>
-        <li>
-          <%= "#{model.name}: TBD how the model has attributes" %>
-          <%= link_to "Edit"%>
-          <%= link_to "Delete"%>
-        </li>
-      </ul>
-    <% end %>
+
+  <h2>Models</h2>
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Attributes</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+
+  <% @models.each do |model| %>
+    <tr>
+      <td><%= model.name %></td>
+      <td><%="TBD" %></td>
+      <td><%= link_to "Edit" %></td>
+      <td><%= link_to "Delete"%></td>
+    </tr>
+  <% end %>
+  </table>
+
+  <br />
+
+
   
   <% end %>
   
-  
 </p>
+

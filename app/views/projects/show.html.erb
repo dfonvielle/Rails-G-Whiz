@@ -1,26 +1,31 @@
 <h1><%= @project.name %> App</h1>
 
+<p>Your minimum viable product (MVP) is the heart and soul of your app. It's the most important thing that you want your app to achieve. (The simpler, the better!)</p>
 
-<p>
-  <b>MVP:</b>
-  <%= @project.mvp %>
-</p>
+<p>Your current MVP for <%= @project.name %>: <%= @project.mvp %></p>
+
+
 
 <% if @desires.blank? %>
 
   <p>
-      <b>Priority:</b>
-    <%= "Enter user stories and business logic so that you'll know what you want to achieve with your rails app. In the next step, you'll identify parts of your rails app based off of the user stories and business logic that you enter." %>
+    <blockquote>Priority:
+    <%= "Enter user stories and business logic so that you'll know what you want to achieve with your rails app. In the next step, you'll identify parts of your rails app based off of the user stories and business logic that you enter." %></blockquote>
   </p>
   
   <% elsif @parts.blank? %>
 
   <p>
-    <b>Priority:</b>
-    <%= "You have entered in user stories and/or business logic. Use this information to identify parts of your app and establish them as models, views, or controllers.  This will help you flesh out your MVC view as you go along." %>
+    <blockquote>Priority:
+    <%= "You have entered in user stories and/or business logic. Use this information to identify parts of your app and establish them as models, views, or controllers.  This will help you flesh out your MVC view as you go along." %></blockquote>
   </p>
 
+  <% else %>
 
+  <p>
+    <blockquote>Priority:
+    <%= "Develop an awesome rails app that you and others enjoy using." %></blockquote>
+  </p>
 
 <% end %>
 
@@ -41,9 +46,12 @@
 
     <%= render "desires/userstories" %>
     <%= render "desires/businesslogic" %>
-    <h2>Project Parts ("Things" That Bring Your Project to Life)</h2> 
     <%= render "desires/parts" %>
-    <h3>M-V-C View</h3>    
+    
+    <h1>M-V-C View for <%= @project.name %> App</h1>    
+    <p>As you identify parts (above) as controllers, models, or views, they'll appear here in your M-V-C view for your <%= @project.name %> app.</p>
+    <p>Also, in this section you can go into greater detail about your app's parts. You can specify which resources each controller provides, what attributes each model has, and how you will provide your views to your users.</p>
+    
     <%= render "desires/controllers" %>
     <%= render "desires/models" %>
     <%= render "desires/views" %>
