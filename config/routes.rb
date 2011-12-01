@@ -5,8 +5,6 @@ Ezmodeling::Application.routes.draw do
 
   resources :desires
 
-  resources :ezpieces
-
   resources :ezprojects
   
   root :to => 'projects#index'
