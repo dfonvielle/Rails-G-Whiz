@@ -1,4 +1,5 @@
-<h1><%= @project.name %> App</h1>
+<h1><%= @project.name %> </h1>
+<h4><%= @project.mvp %></h4>
 
 
 <% if @desires.blank? %>
@@ -28,7 +29,7 @@
   <% elsif @parts.count == 1 %>
   
   <p>
-    <blockquote>Achievement: Congratulations! You have identified a part of your rails app. Now you can identify even more information about it in your M-V-C View... Which you just unlocked!</blockquote>
+    <blockquote>Achievement: Congratulations! You have identified a part of your rails app. Now you can identify even more information about it in your M-V-C View... Which you just unlocked.</blockquote>
   </p>  
 
   <p>
@@ -36,7 +37,7 @@
   </p>  
 
   <p>
-    <blockquote>Priority: create a clearer sense of your project parts in your M-V-C view.</blockquote>
+    <blockquote>Priority: create a clearer sense of your project parts in your M-V-C view. (And for now: create a new part so that you get a new "achievement" message.)</blockquote>
   </p> 
   
   
@@ -49,9 +50,6 @@
 
 <% end %>
 
-
-
-<p><h4>MVP for <%= @project.name %>: <%= @project.mvp %></h4></p>
 
 
 
