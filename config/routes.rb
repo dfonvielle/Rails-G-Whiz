@@ -1,4 +1,6 @@
 Ezmodeling::Application.routes.draw do
+  resources :notes
+
   resources :projects
 
   resources :parts

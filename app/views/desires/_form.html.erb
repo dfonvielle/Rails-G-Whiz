@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-
+  
 
   <div class="field">
     <% if @desire.desire_type == "User Stories" %>
@@ -19,6 +19,8 @@
       <%= f.label :description, "As a business owner and/or rails app developer, I want to..." %><br />
     <% end %>
     <%= f.text_field :description %>
+    <%= f.label :done %>
+    <%= f.check_box :done %>
   </div>
 
   <div class="hidden field">

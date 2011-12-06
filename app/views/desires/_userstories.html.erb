@@ -26,10 +26,22 @@
 
   <% @desires.user_stories.each do |desire| %>
     <tr>
-      <td><%= check_box_tag desire.done %></td>
-      <td><%= desire.description %></td>
-      <td><%= link_to "Edit", edit_desire_path(desire.id) %></td>
-      <td><%= link_to "Delete", desire, :confirm => "You sure about this?", :method => :delete %></td>
+      
+      <% if desire.done == true %>
+          <td><%= check_box_tag :desire_id, :yes, true%></td>
+      <% else %>
+          <td><%= check_box_tag :desire_id %></td> 
+      <% end %>
+      
+        <td><%= desire.description %></td>
+        <td><%= link_to "Edit", edit_desire_path(desire.id) %></td>
+        <td><%= link_to "Delete", desire, :confirm => "You sure about this?", :method => :delete %></td>
+        
+        <% if desire.notes.blank? %>
+            <td><%= link_to "Add_Note", new_note_path(:desire_id => desire.id) %></td>
+        <% else %>
+            <td><%= link_to "See_Notes", edit_note_path(desire.id) %></td>
+        <% end %>
     </tr>
   <% end %>
   </table>
