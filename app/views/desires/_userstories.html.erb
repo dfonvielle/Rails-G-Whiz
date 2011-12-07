@@ -36,6 +36,8 @@
         <td><%= desire.description %></td>
         <td><%= link_to "Edit", edit_desire_path(desire.id) %></td>
         <td><%= link_to "Delete", desire, :confirm => "You sure about this?", :method => :delete %></td>
+        <td><%= desire.hasnotes? ? link_to "YES", new_note_path(:desire_id => desire.id) : link_to "NO" %></td>
+        
         
         <% if desire.notes.blank? %>
             <td><%= link_to "Add_Note", new_note_path(:desire_id => desire.id) %></td>
