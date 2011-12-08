@@ -1,0 +1,2 @@
+module ModelAttributesHelper
+end
