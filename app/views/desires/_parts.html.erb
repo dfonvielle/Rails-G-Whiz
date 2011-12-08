@@ -6,7 +6,7 @@
 
       <p>
         <%= link_to "identify a new part", new_part_url(:project_id => @project.id) %>
-        <%= "for your #{@project.name} app inspired by your user stories and business logic" %> 
+        <%= "for your #{@project.name} app inspired by your user stories" %> 
       </p>
   
     <blockquote><%= "Your project parts are the 'things' that bring your app to life and help create something valuable for your users and your business" %></blockquote>
@@ -18,16 +18,16 @@
 
   <p>
     <%= link_to "identify a new part", new_part_url(:project_id => @project.id) %>
-    <%= "for your #{@project.name} app inspired by your user stories and business logic" %> 
+    <%= "for your #{@project.name} app inspired by your user stories" %> 
   </p>
 
   <table>
     <tr>
       <th>Name</th>
       <th>Description</th>
-      <th>Controller</th>
       <th>Model</th>
       <th>View</th>
+      <th>Controller</th>
       <th>Seed</th>
       <th></th>
       <th></th>
@@ -36,12 +36,12 @@
 
   <% @parts.each do |part| %>
     <tr>
-      <td><%= part.name %></td>
+      <td><%= part.name.pluralize %></td>
       <td><%= part.description %></td>
-      <td><%= part.controller_role %></td>
-      <td><%= part.model_role %></td>
-      <td><%= part.view_role %></td>
-      <td><%= part.seed_role %></td>
+      <td><%= yes_or_no part.model_role %></td>
+      <td><%= yes_or_no part.view_role %></td>
+      <td><%= yes_or_no part.controller_role %></td>
+      <td><%= yes_or_no part.seed_role %></td>
       <td><%= link_to "Edit", edit_part_path(part.id) %></td>
       <td><%= link_to "Delete", part, :confirm => "Really want to part ways with your rails part?", :method => :delete %></td>
     </tr>

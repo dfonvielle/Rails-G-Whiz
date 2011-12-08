@@ -23,19 +23,19 @@
     <%= f.text_field :description %>
   </div>
   <div class="field">
-    <%= f.label :controller_role %><br />
-    <%= f.check_box :controller_role %>
-  </div>
-  <div class="field">
-    <%= f.label :model_role %><br />
+    <%= f.label :model_role, "Model?" %><br />
     <%= f.check_box :model_role %>
   </div>
   <div class="field">
-    <%= f.label :view_role %><br />
+    <%= f.label :view_role, "View?" %><br />
     <%= f.check_box :view_role %>
   </div>
   <div class="field">
-    <%= f.label :seed_role %><br />
+    <%= f.label :controller_role, "Controller?" %><br />
+    <%= f.check_box :controller_role %>
+  </div>
+  <div class="field">
+    <%= f.label :seed_role, "Seed?" %><br />
     <%= f.check_box :seed_role %>
   </div>
   <div class="actions">

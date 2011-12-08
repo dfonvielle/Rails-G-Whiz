@@ -23,7 +23,7 @@
 
   <% @models.each do |model| %>
     <tr>
-      <td><%= model.name %></td>
+      <td><%= model.name.singularize %></td>
       <td><%="TBD" %></td>
       <td><%= link_to "Edit" %></td>
       <td><%= link_to "Delete"%></td>

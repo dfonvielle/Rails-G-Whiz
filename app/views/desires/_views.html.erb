@@ -23,7 +23,7 @@
 
   <% @views.each do |view| %>
     <tr>
-      <td><%= view.name %></td>
+      <td><%= view.name.pluralize %></td>
       <td><%="TBD" %></td>
       <td><%= link_to "Edit" %></td>
       <td><%= link_to "Delete"%></td>

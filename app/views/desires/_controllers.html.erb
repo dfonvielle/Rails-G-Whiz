@@ -22,7 +22,7 @@
 
   <% @controllers.each do |controller| %>
     <tr>
-      <td><%= controller.name %></td>
+      <td><%= controller.name.pluralize %></td>
       <td><%="TBD" %></td>
       <td><%= link_to "Edit" %></td>
       <td><%= link_to "Delete"%></td>
