@@ -45,7 +45,7 @@ class ModelAttributesController < ApplicationController
 
     respond_to do |format|
       if @model_attribute.save
-        format.html { redirect_to @model_attribute, notice: 'Model attribute was successfully created.' }
+        format.html { redirect_to project_path(@model_attribute.part.project.id), notice: 'Model attribute was successfully created.' }
         format.json { render json: @model_attribute, status: :created, location: @model_attribute }
       else
         format.html { render action: "new" }
