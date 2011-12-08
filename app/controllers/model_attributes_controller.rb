@@ -25,6 +25,7 @@ class ModelAttributesController < ApplicationController
   # GET /model_attributes/new.json
   def new
     @model_attribute = ModelAttribute.new
+    @part = Part.find_by_id(params[:current_part_id])
 
     respond_to do |format|
       format.html # new.html.erb

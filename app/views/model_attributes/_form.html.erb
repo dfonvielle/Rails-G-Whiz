@@ -12,12 +12,11 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <br />
+    <%= f.text_field :name %>:<%= f.collection_select :attribute_type_id, AttributeType.all, :id, :description %>
   </div>
-  <div class="field">
-    <%= f.label :type %><br />
-    <%= f.collection_select :type, AttributeType.all, :id, :description %>
+  <div class="hidden field">
+    <%= f.hidden_field :part_id, :value => @part.id %>
   </div>
   <div class="actions">
     <%= f.submit "Create Model Attribute" %>

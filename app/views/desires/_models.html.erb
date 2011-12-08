@@ -19,13 +19,15 @@
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
     </tr>
 
   <% @models.each do |model| %>
     <tr>
-      <td><%= model.name.singularize %></td>
+      <td><%= model.name.singularize.capitalize %></td>
       <td><%="TBD" %></td>
-      <td><%= link_to "Edit" %></td>
+      <td><%= link_to "Add Attribute", new_model_attribute_path(:current_part_id => model.id) %></td>
+      <td><%= link_to "Edit Attributes" %></td>
       <td><%= link_to "Delete"%></td>
     </tr>
   <% end %>
