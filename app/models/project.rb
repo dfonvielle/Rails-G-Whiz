@@ -6,7 +6,9 @@ class Project < ActiveRecord::Base
   
   has_many :parts
 
-
+  validates :name, :presence => true
+  
+  validates :mvp, :presence => true
 
   
   
