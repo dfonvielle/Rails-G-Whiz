@@ -1,8 +1,22 @@
 <p id="notice"><%= notice %></p>
 
+<h2>This particular attribute belongs to <%= @model_attribute.part.name.capitalize.singularize %> model</h2>
+
 <p>
   <%= "#{@model_attribute.name}:#{@model_attribute.attribute_type.description}" %>
 </p>
+
+
+<h2>All Attributes for <%= @model_attribute.part.name.capitalize.singularize %> model</h2>
+
+<% @all_model_attributes.each do |attribute| %>
+
+<p>
+  <%= attribute.name %>:<%= attribute.attribute_type.description %>
+</p>
+
+<% end %>
+
 
 
 

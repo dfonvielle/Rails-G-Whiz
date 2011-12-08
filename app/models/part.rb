@@ -1,6 +1,7 @@
 class Part < ActiveRecord::Base
   
   belongs_to :project
+  has_many :model_attributes
   
   scope :app_models, where(:model_role => true)
   scope :app_controllers, where(:controller_role => true)

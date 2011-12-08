@@ -4,6 +4,7 @@
   <tr>
     <th>Name</th>
     <th>Type</th>
+    <th>Part</th>
     <th></th>
     <th></th>
     <th></th>
@@ -12,7 +13,8 @@
 <% @model_attributes.each do |model_attribute| %>
   <tr>
     <td><%= model_attribute.name %></td>
-    <td><%= model_attribute.type %></td>
+    <td><%= model_attribute.attribute_type.description %></td>
+    <td><%= model_attribute.part.name %></td>
     <td><%= link_to 'Show', model_attribute %></td>
     <td><%= link_to 'Edit', edit_model_attribute_path(model_attribute) %></td>
     <td><%= link_to 'Destroy', model_attribute, confirm: 'Are you sure?', method: :delete %></td>

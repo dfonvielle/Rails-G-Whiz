@@ -14,6 +14,8 @@ class ModelAttributesController < ApplicationController
   # GET /model_attributes/1.json
   def show
     @model_attribute = ModelAttribute.find(params[:id])
+    @part = @model_attribute.part
+    @all_model_attributes = @part.model_attributes
 
     respond_to do |format|
       format.html # show.html.erb

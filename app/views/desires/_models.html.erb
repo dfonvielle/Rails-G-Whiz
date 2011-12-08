@@ -25,7 +25,16 @@
   <% @models.each do |model| %>
     <tr>
       <td><%= model.name.singularize.capitalize %></td>
-      <td><%="TBD" %></td>
+      <% if model.model_attributes.count < 1 %>
+        <td>No attributes!!!</td>
+      <% else %>
+        <td>
+          <% model.model_attributes.each do |attribute| %>
+            <%= attribute.name %>:<%= attribute.attribute_type.description %>              
+          <% end %>
+        </td>
+      <% end %>
+      
       <td><%= link_to "Add Attribute", new_model_attribute_path(:current_part_id => model.id) %></td>
       <td><%= link_to "Edit Attributes" %></td>
       <td><%= link_to "Delete"%></td>
@@ -34,6 +43,7 @@
   </table>
 
   <br />
+
 
 
   

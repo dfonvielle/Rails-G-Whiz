@@ -20,6 +20,15 @@ class ProjectsController < ApplicationController
     @models = @project.parts.app_models
     @views = @project.parts.app_views
     
+    # 
+    # @model_attributes = ModelAttribute.all
+    # @models = @project.parts.app_models
+    # @specific_model = @models.find(params[:part_id])   
+    # 
+    # @model_attribute = ModelAttribute.find(params[:id])
+    # @model_part = @model_attribute.part
+    # @all_model_attributes = @part.model_attributes
+    
     
     respond_to do |format|
       format.html # show.html.erb
