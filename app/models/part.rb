@@ -6,4 +6,8 @@ class Part < ActiveRecord::Base
   scope :app_controllers, where(:controller_role => true)
   scope :app_views, where(:view_role => true)
   
+  validates :name, :presence => true
+  validates :description, :presence => true
+  
+  
 end

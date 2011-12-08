@@ -61,7 +61,7 @@ class PartsController < ApplicationController
 
     respond_to do |format|
       if @part.update_attributes(params[:part])
-        format.html { redirect_to project_url(@part.project_id), notice: 'Part was successfully updated.' }
+        format.html { redirect_to project_url(@part.project_id), notice: "#{@part.name.capitalize.pluralize} part successfully updated." }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
