@@ -38,6 +38,8 @@ class ModelAttributesController < ApplicationController
   # GET /model_attributes/1/edit
   def edit
     @model_attribute = ModelAttribute.find(params[:id])
+    @part = Part.find_by_id(params[@model_attribute.part_id])
+    
   end
 
   # POST /model_attributes

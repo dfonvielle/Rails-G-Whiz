@@ -1,0 +1,40 @@
+<p>
+
+  <% if @controllers.blank? %>
+  
+    <h2>Controllers</h2>
+  
+    <blockquote><%= "Controllers are brains. Where are the brains of the operation? Identify a part above (that's inspired by your user stories and business logic) as a controller and you'll see it here. And you'll be able to do some more cool stuff with it." %></blockquote>
+    
+  <% else %>
+  
+
+  <h2>Controllers</h2>
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Resources Provided</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+
+  <% @controllers.each do |controller| %>
+    <tr>
+      <td><%= controller.name.pluralize %></td>
+      <td><%="TBD" %></td>
+      <td><%= link_to "Edit" %></td>
+      <td><%= link_to "Delete"%></td>
+    </tr>
+  <% end %>
+  </table>
+
+  <br />
+
+
+  
+  <% end %>
+  
+</p>
+

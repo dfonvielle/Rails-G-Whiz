@@ -1,0 +1,47 @@
+<p>
+
+  <% if @views.blank? %>
+  
+    <h2>Views</h2>
+  
+      <blockquote><%= "There's no show, if you're not providing anything to see! What will your users see, and how will they see it? As you identify parts (inspired by your user stories and business logic) as views, they will appear here. And you'll have something to see. Oh, the irony. (According to Alanis Morissette's understanding of irony.)" %></blockquote>
+
+    
+  <% else %>
+  
+
+  <h2>Views</h2>
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Resources</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+
+  <% @views.each do |view| %>
+    <tr>
+      <td><%= view.name.pluralize %></td>
+      <td><%="TBD" %></td>
+      <td><%= link_to "Edit" %></td>
+      <td><%= link_to "Delete"%></td>
+    </tr>
+  <% end %>
+  </table>
+
+  <br />
+
+
+  
+  <% end %>
+  
+</p>
+
+
+
+
+
+
+

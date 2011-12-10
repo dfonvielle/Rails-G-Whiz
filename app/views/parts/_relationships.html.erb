@@ -1,0 +1,49 @@
+<p>
+
+  <% if @models.count < 2 %>
+  
+    <h1>Associations</h1>
+  
+      <blockquote>When you identify two or more parts (inspired by your user stories and business logic) as models, they'll be listed here, and you can figure out what kind of relationships they have to one another, if any.</blockquote>
+
+    
+  <% else %>
+  
+
+  <h1>Associations</h1>
+
+      <blockquote>Associations are relationships between different models. (Ex: belongs_to or has_many). In this section, you can identify the relationships (associations) between different models if there are any.</blockquote>
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Relationships to Other Models</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+
+  <% @models.each do |model| %>
+    <tr>
+      <td><%= model.name %></td>
+      <td><%="TBD" %></td>
+      <td><%= link_to "Edit" %></td>
+      <td><%= link_to "Delete"%></td>
+    </tr>
+  <% end %>
+  </table>
+
+  <br />
+
+
+  
+  <% end %>
+  
+</p>
+
+
+
+
+
+
+

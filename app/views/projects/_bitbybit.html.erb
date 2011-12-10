@@ -5,20 +5,20 @@
 <% elsif @parts.blank? %>
 
   <%= render "desires/userstories" %>
-  <%= render "desires/parts" %>
+  <%= render "parts/parts" %>
     
 <% else %>
 
     <%= render "desires/userstories" %>
-    <%= render "desires/parts" %>
+    <%= render "parts/parts" %>
     
     <h1>M-V-C View for <%= @project.name %> App</h1>    
     <p>As you identify parts (above) as models, views, or controllers, they'll appear here in your M-V-C view for your <%= @project.name %> app.</p>
     <p>Also, in this section you can go into greater detail about your app's parts. You can specify what attributes each model has, what views you'll provide to your users, and which actions your controllers will perform to provide those views.</p>
     
-    <%= render "desires/models" %>
-    <%= render "desires/views" %>
-    <%= render "desires/controllers" %>
+    <%= render "parts/models" %>
+    <%= render "parts/views" %>
+    <%= render "parts/controllers" %>
 
     
 <% end %>

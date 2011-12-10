@@ -1,5 +1,16 @@
-<h1>New Model Attribute</h1>
+<h2>Create New Attribute for <%= @part.name.singularize %> model</h2>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', model_attributes_path %>
+</br>
+
+<h3>Attributes for <%= @part.name.singularize %> model</h3>
+
+<% @part.model_attributes.each do |attribute| %>
+  <p><%= attribute.name %>:<%= attribute.attribute_type.description %>
+    <%= link_to "Edit", edit_model_attribute_path(attribute.id) %>
+    <%= link_to "Destroy" %>
+  </p>
+
+<% end %>
+
