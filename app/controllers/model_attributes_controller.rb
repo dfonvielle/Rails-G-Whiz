@@ -78,10 +78,11 @@ class ModelAttributesController < ApplicationController
   # DELETE /model_attributes/1.json
   def destroy
     @model_attribute = ModelAttribute.find(params[:id])
+    @part_id = @model_attribute.part_id
     @model_attribute.destroy
 
     respond_to do |format|
-      format.html { redirect_to model_attributes_url }
+      format.html { redirect_to new_model_attribute_path(:current_part_id => @part_id), :notice => "Attribute destroyed!" }
       format.json { head :ok }
     end
   end

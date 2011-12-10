@@ -9,7 +9,7 @@
 <% @part.model_attributes.each do |attribute| %>
   <p><%= attribute.name %>:<%= attribute.attribute_type.description %>
     <%= link_to "Edit", edit_model_attribute_path(attribute.id) %>
-    <%= link_to "Destroy" %>
+    <%= link_to "Destroy", model_attribute_path(attribute.id), :method => "delete", :confirm => "You sure about this?" %>
   </p>
 
 <% end %>
