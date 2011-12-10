@@ -65,7 +65,7 @@ class ModelAttributesController < ApplicationController
 
     respond_to do |format|
       if @model_attribute.update_attributes(params[:model_attribute])
-        format.html { redirect_to @model_attribute, notice: 'Model attribute was successfully updated.' }
+        format.html { redirect_to new_model_attribute_path(:current_part_id => @model_attribute.part_id), :notice => "Attribute updated!" }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
