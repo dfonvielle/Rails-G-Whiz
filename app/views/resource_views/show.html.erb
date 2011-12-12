@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Part:</b>
+  <%= @resource_view.part_id %>
+</p>
+
+<p>
+  <b>Resource url:</b>
+  <%= @resource_view.resource_url %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @resource_view.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_resource_view_path(@resource_view) %> |
+<%= link_to 'Back', resource_views_path %>
