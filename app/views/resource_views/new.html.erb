@@ -1,22 +1,47 @@
-<h1>New resource_view</h1>
 
-<%= render 'form' %>
+<h2>Create New URL for <%= @part.name.pluralize.capitalize %> resource</h2>
 
-<%= link_to 'Back', resource_views_path %>
+<p>Examples of conventional URLs and their descriptions:</p>
 
-
-<h2>Create New Attribute for <%= @part.name.singularize %> model</h2>
+<ul>
+  <p>
+    <li> 
+    <%= "/#{@part.name.pluralize.downcase}" %> </br>
+    <%= "provides an index (or listing) of all #{@part.name.pluralize.downcase}" %>
+    </li>
+  </p>
+  <p>
+    <li> 
+    <%= "/#{@part.name.pluralize.downcase}/new" %> </br>
+    <%= "enter details for a new #{@part.name.singularize.downcase}" %>
+    </li>
+  </p>
+  <p>
+    <li> 
+    <%= "/#{@part.name.pluralize.downcase}/:id/edit" %> </br>
+    <%= "edit details of a  #{@part.name.singularize.downcase} that has already been created" %>
+    </li>
+  </p>
+  <p>
+    <li> 
+    <%= "/#{@part.name.pluralize.downcase}/:id" %> </br>
+    <%= "shows the details of a particular #{@part.name.singularize.downcase}" %>
+    </li>
+  </p>  
+  
+  
+</ul>
 
 <%= render 'form' %>
 
 </br>
 
-<h3>Attributes for <%= @part.name.singularize %> model</h3>
+<h3>URLs for <%= @part.name.pluralize.capitalize %> resource</h3>
 
-<% @part.model_attributes.each do |attribute| %>
-  <p><%= attribute.name %>:<%= attribute.attribute_type.description %>
-    <%= link_to "Edit", edit_model_attribute_path(attribute.id) %>
-    <%= link_to "Destroy", model_attribute_path(attribute.id), :method => "delete", :confirm => "You sure about this?" %>
+<% @part.resource_views.each do |resource_view| %>
+  <p><%= resource_view.resource_url %> : <%= resource_view.description %>
+    <%= link_to "Edit", edit_resource_view_path(resource_view.id) %>
+    <%= link_to "Destroy", resource_view_path(resource_view.id), :method => "delete", :confirm => "You sure about this?" %>
   </p>
 
 <% end %>

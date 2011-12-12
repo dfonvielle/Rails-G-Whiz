@@ -11,16 +11,16 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :part_id %><br />
-    <%= f.number_field :part_id %>
+  <div class=" hidden field">
+    <br />
+    <%= f.hidden_field :part_id, :value => @part.id %>
   </div>
   <div class="field">
-    <%= f.label :resource_url %><br />
+    <%= f.label :resource_url, "URL" %> 
     <%= f.text_field :resource_url %>
   </div>
   <div class="field">
-    <%= f.label :description %><br />
+    <%= f.label :description %>
     <%= f.text_field :description %>
   </div>
   <div class="actions">

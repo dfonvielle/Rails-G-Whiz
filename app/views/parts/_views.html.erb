@@ -33,9 +33,10 @@
         <% else %>
           <td>
           <% view.resource_views.each do |resource_view| %>
-            <%= resource_view.resource_url %> --> <%= resource_view.description %>
-          </td>            
+            <%= resource_view.resource_url %> ...
         <% end %>
+          </td>            
+       
   <% end %>
         
       <td><%= link_to "Add/Modify Views", new_resource_view_path(:current_part_id => view.id) %></td>

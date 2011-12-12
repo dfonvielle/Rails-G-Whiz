@@ -25,6 +25,7 @@ class ResourceViewsController < ApplicationController
   # GET /resource_views/new.json
   def new
     @resource_view = ResourceView.new
+    @part = Part.find_by_id(params[:current_part_id])
 
     respond_to do |format|
       format.html # new.html.erb
