@@ -15,7 +15,8 @@
   <table>
     <tr>
       <th>Name</th>
-      <th>Resources</th>
+      <th>URLs</th>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -27,6 +28,13 @@
       <td><%="TBD" %></td>
       <td><%= link_to "Edit" %></td>
       <td><%= link_to "Delete"%></td>
+      
+      <% if view.note.blank? %>
+          <td><%= link_to " Add Note", new_note_path(:part_id => view.id) %></td>
+      <% else %>
+          <td><%= link_to "See Notes", edit_note_path(view.note.id) %></td>
+      <% end %>
+      
     </tr>
   <% end %>
   </table>

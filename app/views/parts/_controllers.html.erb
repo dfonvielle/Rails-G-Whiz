@@ -14,7 +14,8 @@
   <table>
     <tr>
       <th>Name</th>
-      <th>Resources Provided</th>
+      <th>Actions</th>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -26,6 +27,11 @@
       <td><%="TBD" %></td>
       <td><%= link_to "Edit" %></td>
       <td><%= link_to "Delete"%></td>
+      <% if controller.note.blank? %>
+          <td><%= link_to " Add Note", new_note_path(:part_id => controller.id) %></td>
+      <% else %>
+          <td><%= link_to "See Notes", edit_note_path(controller.note.id) %></td>
+      <% end %>
     </tr>
   <% end %>
   </table>

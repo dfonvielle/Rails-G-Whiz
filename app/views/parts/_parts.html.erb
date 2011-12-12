@@ -32,6 +32,7 @@
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
     </tr>
 
   <% @parts.each do |part| %>
@@ -44,6 +45,11 @@
       <td><%= yes_or_no part.seed_role %></td>
       <td><%= link_to "Edit", edit_part_path(part.id) %></td>
       <td><%= link_to "Delete", part, :confirm => "Really want to part ways with your rails part?", :method => :delete %></td>
+      <% if part.note.blank? %>
+          <td><%= link_to " Add Note", new_note_path(:part_id => part.id) %></td>
+      <% else %>
+          <td><%= link_to "See Notes", edit_note_path(part.note.id) %></td>
+      <% end %>  
     </tr>
   <% end %>
   </table>
