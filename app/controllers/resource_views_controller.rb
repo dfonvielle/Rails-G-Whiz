@@ -36,6 +36,7 @@ class ResourceViewsController < ApplicationController
   # GET /resource_views/1/edit
   def edit
     @resource_view = ResourceView.find(params[:id])
+    @part = Part.find_by_id(params[@resource_view.part_id])
   end
 
   # POST /resource_views
@@ -45,7 +46,7 @@ class ResourceViewsController < ApplicationController
 
     respond_to do |format|
       if @resource_view.save
-        format.html { redirect_to @resource_view, notice: 'Resource view was successfully created.' }
+        format.html { redirect_to new_resource_view_path(:current_part_id => @resource_view.part_id), notice: 'Resource view was successfully created.' }
         format.json { render json: @resource_view, status: :created, location: @resource_view }
       else
         format.html { render action: "new" }
@@ -61,7 +62,7 @@ class ResourceViewsController < ApplicationController
 
     respond_to do |format|
       if @resource_view.update_attributes(params[:resource_view])
-        format.html { redirect_to @resource_view, notice: 'Resource view was successfully updated.' }
+        format.html { redirect_to new_resource_view_path(:current_part_id => @resource_view.part_id), notice: 'Resource view was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
@@ -74,10 +75,11 @@ class ResourceViewsController < ApplicationController
   # DELETE /resource_views/1.json
   def destroy
     @resource_view = ResourceView.find(params[:id])
+    @part_id = @resource_view.part.id
     @resource_view.destroy
 
     respond_to do |format|
-      format.html { redirect_to resource_views_url }
+      format.html { redirect_to new_resource_view_path(:current_part_id => @part_id) }
       format.json { head :ok }
     end
   end
