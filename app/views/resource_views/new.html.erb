@@ -3,3 +3,22 @@
 <%= render 'form' %>
 
 <%= link_to 'Back', resource_views_path %>
+
+
+<h2>Create New Attribute for <%= @part.name.singularize %> model</h2>
+
+<%= render 'form' %>
+
+</br>
+
+<h3>Attributes for <%= @part.name.singularize %> model</h3>
+
+<% @part.model_attributes.each do |attribute| %>
+  <p><%= attribute.name %>:<%= attribute.attribute_type.description %>
+    <%= link_to "Edit", edit_model_attribute_path(attribute.id) %>
+    <%= link_to "Destroy", model_attribute_path(attribute.id), :method => "delete", :confirm => "You sure about this?" %>
+  </p>
+
+<% end %>
+
+<%= link_to 'Back', project_path(@part.project_id) %>

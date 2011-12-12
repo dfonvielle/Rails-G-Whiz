@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111211224947) do
+ActiveRecord::Schema.define(:version => 20111212175057) do
 
   create_table "attribute_types", :force => true do |t|
     t.string   "description"
@@ -90,6 +90,14 @@ ActiveRecord::Schema.define(:version => 20111211224947) do
     t.string   "github"
     t.string   "heroku"
     t.string   "mockup"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "resource_views", :force => true do |t|
+    t.integer  "part_id"
+    t.string   "resource_url"
+    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

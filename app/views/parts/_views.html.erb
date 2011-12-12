@@ -20,12 +20,26 @@
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
     </tr>
+
+
 
   <% @views.each do |view| %>
     <tr>
-      <td><%= view.name.pluralize %></td>
-      <td><%="TBD" %></td>
+      <td><%= view.name.pluralize.capitalize %></td>
+        <% if view.resource_views.count < 1 %>
+          <td>No URLs for your views!!!</td>
+        <% else %>
+          <td>
+          <% view.resource_views.each do |resource_view| %>
+            <%= resource_view.resource_url %> --> <%= resource_view.description %>
+          </td>            
+        <% end %>
+  <% end %>
+        
+      <td><%= link_to "Add/Modify Views", new_resource_view_path(:current_part_id => view.id) %></td>
+        
       <td><%= link_to "Edit" %></td>
       <td><%= link_to "Delete"%></td>
       
@@ -46,10 +60,3 @@
   <% end %>
   
 </p>
-
-
-
-
-
-
-

@@ -30,9 +30,9 @@
         <td>
           <% model.model_attributes.each do |attribute| %>
             <%= attribute.name %>:<%= attribute.attribute_type.description %>              
-          <% end %>
+        <% end %>
         </td>
-      <% end %>
+  <% end %>
       
       <td><%= link_to "Add/Modify Attributes", new_model_attribute_path(:current_part_id => model.id) %></td>
       
