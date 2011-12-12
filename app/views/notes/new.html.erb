@@ -1,3 +1,22 @@
+<% if @note.desire_id? %>
 
-<%= render 'form' %>
+  <p>
+    <b><%= @note.desire.desire_type.singularize %>:</b>
+    <%= @note.desire.description %>
+  </p>
 
+  <%= render 'form' %>
+
+<% end %>
+
+
+<% if @note.part_id? %>
+
+  <p>
+    <b><%= @note.part.name.pluralize.capitalize %>:</b>
+    <%= @note.part.description %>
+  </p>
+
+  <%= render 'form' %>
+
+<% end %>

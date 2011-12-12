@@ -1,7 +1,3 @@
-<p>
-  <b><%= @note.desire.desire_type.singularize %>:</b>
-  <%= @note.desire.description %>
-</p>
 
 
 <%= form_for(@note) do |f| %>
@@ -17,9 +13,24 @@
     </div>
   <% end %>
 
-  <div class="hidden field">
-    <%= f.hidden_field :desire_id, :value => @note.desire_id %>
-  </div>
+<% if @note.desire_id? %>
+
+    <div class="hidden field">
+      <%= f.hidden_field :desire_id, :value => @note.desire_id %>
+    </div>
+
+<% end %>
+
+
+<% if @note.part_id? %>
+
+    <div class="hidden field">
+      <%= f.hidden_field :part_id, :value => @note.part_id %>
+    </div>
+
+<% end %>
+
+
   
   <div class="field">
     <%= f.label :notetext, "Notes" %><br />

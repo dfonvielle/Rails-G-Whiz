@@ -37,7 +37,14 @@
       
       <td><%= link_to "Add/Modify Attributes", new_model_attribute_path(:current_part_id => model.id) %></td>
       <td><%= link_to "TBD" %></td>
-      <td><%= link_to "TBD"%></td>
+      
+      <% if model.note.blank? %>
+          <td><%= link_to " Add Note", new_note_path(:part_id => model.id) %></td>
+      <% else %>
+          <td><%= link_to "See Notes", edit_note_path(model.note.id) %></td>
+      <% end %>
+      
+      
     </tr>
   <% end %>
   </table>

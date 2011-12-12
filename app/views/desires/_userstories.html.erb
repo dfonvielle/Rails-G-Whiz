@@ -39,10 +39,10 @@
 
         
         
-        <% if desire.notes.blank? %>
+        <% if desire.note.blank? %>
             <td><%= link_to " Add Note", new_note_path(:desire_id => desire.id) %></td>
         <% else %>
-            <td><%= link_to "See Notes", edit_note_path(desire.id) %></td>
+            <td><%= link_to "See Notes", edit_note_path(desire.note.id) %></td>
         <% end %>
     </tr>
   <% end %>

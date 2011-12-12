@@ -25,10 +25,21 @@ class NotesController < ApplicationController
   # GET /notes/new.json
   def new
     @note = Note.new
-    @note.desire_id = params[:desire_id]
-    @desire = Desire.find_by_id(params[:desire_id])
-    @note.desire.description = @desire.description
-    @note.desire.desire_type = @desire.desire_type
+    
+    if params[:desire_id]
+      @note.desire_id = params[:desire_id]
+      @desire = Desire.find_by_id(params[:desire_id])
+      @note.desire.description = @desire.description
+      @note.desire.desire_type = @desire.desire_type
+    end
+  
+    if params[:part_id]
+      @note.part_id = params[:part_id]
+      @part = Part.find_by_id(params[:part_id])
+      @note.part.description = @part.description
+    end
+    
+    
 
     respond_to do |format|
       format.html # new.html.erb
@@ -38,7 +49,10 @@ class NotesController < ApplicationController
 
   # GET /notes/1/edit
   def edit
-    @note = Note.find_by_desire_id(params[:id])
+     
+    @note = Note.find_by_id(params[:id])
+  
+  
     # @desire = Desire.find(params[:id])
     # @note.desire = @desire
     # @note = Note.find(params[:id])
@@ -51,7 +65,7 @@ class NotesController < ApplicationController
 
     respond_to do |format|
       if @note.save
-        format.html { redirect_to @note, notice: 'Note was successfully created.' }
+        format.html { redirect_to edit_note_path(@note.id), notice: 'Note was successfully created.' }
         format.json { render json: @note, status: :created, location: @note }
       else
         format.html { render action: "new" }

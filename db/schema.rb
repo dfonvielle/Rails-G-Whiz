@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111208045015) do
+ActiveRecord::Schema.define(:version => 20111211224947) do
 
   create_table "attribute_types", :force => true do |t|
     t.string   "description"
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(:version => 20111208045015) do
     t.text     "notetext"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "part_id"
   end
 
   create_table "parts", :force => true do |t|
