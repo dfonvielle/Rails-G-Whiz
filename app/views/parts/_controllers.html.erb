@@ -29,7 +29,7 @@
           <% else %>
             <td>
             <% controller.controller_actions.each do |controller_action| %>
-              <%= controller_action.controller_method %> ...
+              <%= controller_action.controller_method %> --> <%= controller_action.resource_view.resource_url %> ...
           <% end %>
             </td>
     <% end %>

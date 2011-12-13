@@ -11,21 +11,18 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :id %><br />
-    <%= f.number_field :id %>
+
+  <div class="hidden field">
+    <br />
+    <%= f.hidden_field :part_id, :value => @part.id %>
   </div>
   <div class="field">
-    <%= f.label :part_id %><br />
-    <%= f.number_field :part_id %>
-  </div>
-  <div class="field">
-    <%= f.label :controller_method %><br />
+    <%= f.label :controller_method, "Controller Method" %><br />
     <%= f.text_field :controller_method %>
   </div>
   <div class="field">
-    <%= f.label :resource_view_id %><br />
-    <%= f.number_field :resource_view_id %>
+    <%= f.label :resource_view_id, "View" %><br />
+    <%= f.collection_select :resource_view_id, ResourceView.all, :id, :resource_url %>
   </div>
   <div class="actions">
     <%= f.submit %>

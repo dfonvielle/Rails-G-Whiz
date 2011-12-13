@@ -6,4 +6,16 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Back', controller_actions_path %>
+</br>
+
+<h3>Actions for <%= @part.name.pluralize %> controller</h3>
+
+<% @part.controller_actions.each do |controller_action| %>
+  <p><%= controller_action.controller_method %> --> <%= controller_action.resource_view.resource_url %>
+    <%= link_to "Edit", edit_controller_action_path(controller_action.id) %>
+    <%= link_to "Destroy", controller_action_path(controller_action.id), :method => "delete", :confirm => "You sure about this?" %>
+  </p>
+
+<% end %>
+
+<%= link_to 'Back', project_path(@part.project_id) %>
