@@ -61,7 +61,7 @@ class ControllerActionsController < ApplicationController
 
     respond_to do |format|
       if @controller_action.update_attributes(params[:controller_action])
-        format.html { redirect_to @controller_action, notice: 'Controller action was successfully updated.' }
+        format.html { redirect_to new_controller_action_path(:current_part_id => @controller_action.part.id), notice: 'Controller action was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
