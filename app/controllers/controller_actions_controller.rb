@@ -25,6 +25,7 @@ class ControllerActionsController < ApplicationController
   # GET /controller_actions/new.json
   def new
     @controller_action = ControllerAction.new
+    @part = Part.find_by_id(params[:current_part_id])
 
     respond_to do |format|
       format.html # new.html.erb
