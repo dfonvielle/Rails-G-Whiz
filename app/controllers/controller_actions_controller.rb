@@ -74,10 +74,11 @@ class ControllerActionsController < ApplicationController
   # DELETE /controller_actions/1.json
   def destroy
     @controller_action = ControllerAction.find(params[:id])
+    @part = @controller_action.part.id
     @controller_action.destroy
 
     respond_to do |format|
-      format.html { redirect_to controller_actions_url }
+      format.html { redirect_to new_controller_action_path(:current_part_id => @part) }
       format.json { head :ok }
     end
   end
