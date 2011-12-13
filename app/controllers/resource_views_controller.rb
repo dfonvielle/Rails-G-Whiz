@@ -79,7 +79,7 @@ class ResourceViewsController < ApplicationController
     @resource_view.destroy
 
     respond_to do |format|
-      format.html { redirect_to new_resource_view_path(:current_part_id => @part_id) }
+      format.html { redirect_to new_resource_view_path(:current_part_id => @part_id), notice: 'You killed your view!!! Which means that this is A View To a Kill. Cue Duran Duran.' }
       format.json { head :ok }
     end
   end

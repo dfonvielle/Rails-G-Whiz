@@ -78,10 +78,16 @@ class NotesController < ApplicationController
   # PUT /notes/1.json
   def update
     @note = Note.find(params[:id])
+    
+    if @note.desire.blank?
+      @project_id = @note.part.project.id
+    else
+      @project_id = @note.desire.project.id
+    end
 
     respond_to do |format|
       if @note.update_attributes(params[:note])
-        format.html { redirect_to project_path(@note.desire.project.id), notice: 'Note was successfully updated.' }
+        format.html { redirect_to project_path(@project_id), notice: 'Note was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
