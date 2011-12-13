@@ -25,7 +25,7 @@
 
   <% @views.each do |view| %>
     <tr>
-      <td><%= view.name.pluralize.capitalize %></td>
+      <td><%= view.name.pluralize %></td>
         <% if view.resource_views.count < 1 %>
           <td>No URLs for your views!!!</td>
         <% else %>

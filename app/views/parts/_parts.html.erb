@@ -37,7 +37,7 @@
 
   <% @parts.each do |part| %>
     <tr>
-      <td><%= part.name.pluralize.capitalize %></td>
+      <td><%= part.name.pluralize %></td>
       <td><%= part.description %></td>
       <td><%= yes_or_no part.model_role %></td>
       <td><%= yes_or_no part.view_role %></td>

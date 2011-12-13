@@ -23,7 +23,7 @@
 
   <% @models.each do |model| %>
     <tr>
-      <td><%= model.name.singularize.capitalize %></td>
+      <td><%= model.name.singularize %></td>
       <% if model.model_attributes.count < 1 %>
         <td>No attributes!!!</td>
       <% else %>

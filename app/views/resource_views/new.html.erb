@@ -6,25 +6,25 @@
 <ul>
   <p>
     <li> 
-    <%= "/#{@part.name.pluralize.downcase}" %> </br>
-    <%= "provides an index (or listing) of all #{@part.name.pluralize.downcase}" %>
+    <%= "/#{@part.name.pluralize.downcase} (#{@part.name.pluralize.downcase}_path)" %> </br>
+    <%= "lists an index of all #{@part.name.pluralize.downcase}" %>
     </li>
   </p>
   <p>
     <li> 
-    <%= "/#{@part.name.pluralize.downcase}/new" %> </br>
+    <%= "/#{@part.name.pluralize.downcase}/new (new_#{@part.name.singularize.downcase}_path)" %> </br>
     <%= "enter details for a new #{@part.name.singularize.downcase}" %>
     </li>
   </p>
   <p>
     <li> 
-    <%= "/#{@part.name.pluralize.downcase}/:id/edit" %> </br>
+    <%= "/#{@part.name.pluralize.downcase}/:id/edit (edit_#{@part.name.singularize.downcase}_path)" %> </br>
     <%= "edit details of a  #{@part.name.singularize.downcase} that has already been created" %>
     </li>
   </p>
   <p>
     <li> 
-    <%= "/#{@part.name.pluralize.downcase}/:id" %> </br>
+    <%= "/#{@part.name.pluralize.downcase}/:id (#{@part.name.singularize.downcase}_path)" %> </br>
     <%= "shows the details of a particular #{@part.name.singularize.downcase}" %>
     </li>
   </p>  
