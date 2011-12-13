@@ -1,0 +1,29 @@
+<h1>Listing controller_actions</h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Part</th>
+    <th>Controller method</th>
+    <th>Resource view</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @controller_actions.each do |controller_action| %>
+  <tr>
+    <td><%= controller_action.id %></td>
+    <td><%= controller_action.part_id %></td>
+    <td><%= controller_action.controller_method %></td>
+    <td><%= controller_action.resource_view_id %></td>
+    <td><%= link_to 'Show', controller_action %></td>
+    <td><%= link_to 'Edit', edit_controller_action_path(controller_action) %></td>
+    <td><%= link_to 'Destroy', controller_action, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Controller action', new_controller_action_path %>

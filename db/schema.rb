@@ -11,10 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111212175057) do
+ActiveRecord::Schema.define(:version => 20111213023712) do
 
   create_table "attribute_types", :force => true do |t|
     t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "controller_actions", :force => true do |t|
+    t.integer  "part_id"
+    t.string   "controller_method"
+    t.integer  "resource_view_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

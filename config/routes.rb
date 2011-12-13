@@ -1,4 +1,6 @@
 Ezmodeling::Application.routes.draw do
+  resources :controller_actions
+
   resources :resource_views
 
   resources :model_attributes

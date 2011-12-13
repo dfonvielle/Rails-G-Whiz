@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Id:</b>
+  <%= @controller_action.id %>
+</p>
+
+<p>
+  <b>Part:</b>
+  <%= @controller_action.part_id %>
+</p>
+
+<p>
+  <b>Controller method:</b>
+  <%= @controller_action.controller_method %>
+</p>
+
+<p>
+  <b>Resource view:</b>
+  <%= @controller_action.resource_view_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_controller_action_path(@controller_action) %> |
+<%= link_to 'Back', controller_actions_path %>
