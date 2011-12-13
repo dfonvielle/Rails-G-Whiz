@@ -9,31 +9,41 @@
   <% else %>
   
 
-  <h2>Controllers</h2>
+    <h2>Controllers</h2>
 
-  <table>
-    <tr>
-      <th>Name</th>
-      <th>Actions</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Actions</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
 
-  <% @controllers.each do |controller| %>
-    <tr>
-      <td><%= controller.name.pluralize %></td>
-      <td><%="TBD" %></td>
-      <td><%= link_to "Edit" %></td>
-      <td><%= link_to "Delete"%></td>
-      <% if controller.note.blank? %>
-          <td><%= link_to " Add Note", new_note_path(:part_id => controller.id) %></td>
-      <% else %>
-          <td><%= link_to "See Notes", edit_note_path(controller.note.id) %></td>
-      <% end %>
-    </tr>
-  <% end %>
+    <% @controllers.each do |controller| %>
+      <tr>
+    
+        <td><%= controller.name.pluralize %></td>
+          <% if controller.controller_actions.count < 1 %>
+            <td>No controller actions!!!</td>
+          <% else %>
+            <td>
+            <% controller.controller_actions.each do |controller_action| %>
+              <%= controller_action.controller_method %> ...
+          <% end %>
+            </td>
+    <% end %>
+    
+        <td><%= link_to "Add/Modify Actions", new_controller_action_path(:current_part_id => controller.id) %></td>
+    
+        <% if controller.note.blank? %>
+            <td><%= link_to " Add Note", new_note_path(:part_id => controller.id) %></td>
+        <% else %>
+            <td><%= link_to "See Notes", edit_note_path(controller.note.id) %></td>
+        <% end %>
+    
+      </tr>
+    <% end %>
   </table>
 
   <br />
