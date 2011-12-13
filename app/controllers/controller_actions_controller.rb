@@ -48,7 +48,7 @@ class ControllerActionsController < ApplicationController
         format.html { redirect_to new_controller_action_path(:current_part_id => @controller_action.part.id), notice: 'Controller action was successfully created.' }
         format.json { render json: @controller_action, status: :created, location: @controller_action }
       else
-        format.html { render action: "new" }
+        format.html { redirect_to new_controller_action_path(:current_part_id => @controller_action.part.id), notice: "Didn't work!!! Did you enter a controller method?" }
         format.json { render json: @controller_action.errors, status: :unprocessable_entity }
       end
     end
@@ -78,7 +78,7 @@ class ControllerActionsController < ApplicationController
     @controller_action.destroy
 
     respond_to do |format|
-      format.html { redirect_to new_controller_action_path(:current_part_id => @part) }
+      format.html { redirect_to new_controller_action_path(:current_part_id => @part), notice: "You destroyed a controller method! Is there a method to your madness?" }
       format.json { head :ok }
     end
   end

@@ -49,7 +49,7 @@ class ResourceViewsController < ApplicationController
         format.html { redirect_to new_resource_view_path(:current_part_id => @resource_view.part_id), notice: 'Resource view was successfully created.' }
         format.json { render json: @resource_view, status: :created, location: @resource_view }
       else
-        format.html { render action: "new" }
+        format.html { redirect_to new_resource_view_path(:current_part_id => @resource_view.part_id), notice: "Didn't work!!! Did you enter in a URL?" }
         format.json { render json: @resource_view.errors, status: :unprocessable_entity }
       end
     end

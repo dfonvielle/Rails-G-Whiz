@@ -52,7 +52,7 @@ class ModelAttributesController < ApplicationController
         format.html { redirect_to new_model_attribute_path(:current_part_id => @model_attribute.part_id), notice: 'Model attribute was successfully created.' }
         format.json { render json: @model_attribute, status: :created, location: @model_attribute }
       else
-        format.html { render action: "new" }
+        format.html { redirect_to new_model_attribute_path(:current_part_id => @model_attribute.part_id), notice: "Didn't work!!! Did you enter a name for your attribute?" }
         format.json { render json: @model_attribute.errors, status: :unprocessable_entity }
       end
     end
