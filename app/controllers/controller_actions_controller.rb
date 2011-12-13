@@ -45,7 +45,7 @@ class ControllerActionsController < ApplicationController
 
     respond_to do |format|
       if @controller_action.save
-        format.html { redirect_to @controller_action, notice: 'Controller action was successfully created.' }
+        format.html { redirect_to new_controller_action_path(:current_part_id => @controller_action.part.id), notice: 'Controller action was successfully created.' }
         format.json { render json: @controller_action, status: :created, location: @controller_action }
       else
         format.html { render action: "new" }
