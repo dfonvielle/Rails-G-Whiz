@@ -11,7 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111213023712) do
+ActiveRecord::Schema.define(:version => 20111214015243) do
+
+  create_table "association_types", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "attribute_types", :force => true do |t|
     t.string   "description"

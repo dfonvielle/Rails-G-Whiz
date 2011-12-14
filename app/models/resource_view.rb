@@ -5,5 +5,8 @@ class ResourceView < ActiveRecord::Base
   
   validates :resource_url, :presence => true
   
+  # scope :part_conventions, where(:part_id => ResourceView.part.id)
+  # scope :current_project_views, where(? => ?)
+  
   
 end
