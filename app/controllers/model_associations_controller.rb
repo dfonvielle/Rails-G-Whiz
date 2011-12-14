@@ -45,7 +45,7 @@ class ModelAssociationsController < ApplicationController
 
     respond_to do |format|
       if @model_association.save
-        format.html { redirect_to @model_association, notice: 'Model association was successfully created.' }
+        format.html { redirect_to new_model_association_path(:primary_model_id => @model_association.primary_model_id), notice: 'Model association was successfully created.' }
         format.json { render json: @model_association, status: :created, location: @model_association }
       else
         format.html { render action: "new" }
