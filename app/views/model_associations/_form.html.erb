@@ -11,21 +11,21 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :primary_model_id %><br />
-    <%= f.number_field :primary_model_id %>
+  <div class="hidden field">
+    <br />
+    <%= f.hidden_field :primary_model_id, :value => @primary_model.id %>
   </div>
   <div class="field">
-    <%= f.label :secondary_model_id %><br />
-    <%= f.number_field :secondary_model_id %>
+    <%= f.label :association_type_id, "What kind of association?" %><br />
+    <%= f.collection_select :association_type_id, AssociationType.all, :id, :name %>
+  </div>
+  <div class="field">
+    <%= f.label :secondary_model_id, "With which model?" %><br />
+    <%= f.collection_select :secondary_model_id, @primary_model.project.parts.app_models, :id, :name %>
   </div>
   <div class="field">
     <%= f.label :project_id %><br />
     <%= f.number_field :project_id %>
-  </div>
-  <div class="field">
-    <%= f.label :association_type_id %><br />
-    <%= f.number_field :association_type_id %>
   </div>
   <div class="field">
     <%= f.label :association_name %><br />
