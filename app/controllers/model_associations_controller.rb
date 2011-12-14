@@ -74,10 +74,11 @@ class ModelAssociationsController < ApplicationController
   # DELETE /model_associations/1.json
   def destroy
     @model_association = ModelAssociation.find(params[:id])
+    @primary_model_id = @model_association.primary_model_id
     @model_association.destroy
 
     respond_to do |format|
-      format.html { redirect_to model_associations_url }
+      format.html { redirect_to new_model_association_path(:primary_model_id => @primary_model_id), notice: 'You just destroyed a model association! Not feeling too social today, are we?' }
       format.json { head :ok }
     end
   end

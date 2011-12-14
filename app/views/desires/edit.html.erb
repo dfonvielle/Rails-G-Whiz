@@ -1,6 +1,5 @@
-<h1>Editing desire</h1>
+<h2>Editing <%= @desire.desire_type.singularize %></h2>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @desire %> |
-<%= link_to 'Back', desires_path %>
+<%= link_to 'Back', project_path(@desire.project.id) %>

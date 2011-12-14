@@ -76,11 +76,11 @@ class DesiresController < ApplicationController
   # DELETE /desires/1.json
   def destroy
     @desire = Desire.find(params[:id])
-    projectid = @desire.project_id
+    expiring_desire = @desire
     @desire.destroy
 
     respond_to do |format|
-      format.html { redirect_to project_url(projectid), :notice => "You successfully deleted your item." }
+      format.html { redirect_to project_url(expiring_desire.project.id), :notice => "You successfully deleted your #{expiring_desire.desire_type.singularize}" }
       format.json { head :ok }
     end
   end

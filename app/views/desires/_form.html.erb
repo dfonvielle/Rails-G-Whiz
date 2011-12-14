@@ -18,8 +18,9 @@
     <% else %>
       <%= f.label :description, "As a business owner and/or rails app developer, I want to..." %><br />
     <% end %>
-    <%= f.text_field :description %>
-    <%= f.label :done %>
+    <%= f.text_field :description %><br />
+    <br />
+    <%= f.label :done, "Completed?" %>
     <%= f.check_box :done %>
   </div>
 
@@ -32,7 +33,7 @@
   </div>
   
   <div class="actions">
-    <%= f.submit "Make It So" %>
+    <%= f.submit "Proceed with #{@desire.desire_type.singularize}" %>
   </div>
   
 <% end %>
