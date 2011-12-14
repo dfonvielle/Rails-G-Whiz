@@ -1,0 +1,30 @@
+<%= form_for(@model_association) do |f| %>
+  <% if @model_association.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@model_association.errors.count, "error") %> prohibited this model_association from being saved:</h2>
+
+      <ul>
+      <% @model_association.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<h3>A <%= @model_association.primary_model.name.singularize %>:</h3>
+
+  <div class="field">
+    <%= f.collection_select :association_type_id, AssociationType.all, :id, :name %>
+  </div>
+  <div class="field">
+    <%= f.text_field :association_name %> 
+    <i>(For example, you could put :user or :users)</i>
+  </div>
+  <div class="field">
+    <br />
+    <%= f.label :secondary_model_id, "Which model is #{@model_association.primary_model.name.singularize} connecting to?" %><br />
+    <%= f.collection_select :secondary_model_id, @model_association.secondary_model.project.parts.app_models, :id, :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Update Model Association!"%>
+  </div>
+<% end %>

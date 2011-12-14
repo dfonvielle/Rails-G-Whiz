@@ -61,7 +61,7 @@ class ModelAssociationsController < ApplicationController
 
     respond_to do |format|
       if @model_association.update_attributes(params[:model_association])
-        format.html { redirect_to @model_association, notice: 'Model association was successfully updated.' }
+        format.html { redirect_to new_model_association_path(:primary_model_id => @model_association.primary_model_id), notice: 'Model association was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
