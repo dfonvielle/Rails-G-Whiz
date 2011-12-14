@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  primary_model_id: 1
+  secondary_model_id: 1
+  project_id: 1
+  association_type_id: 1
+  association_name: MyString
+
+two:
+  primary_model_id: 1
+  secondary_model_id: 1
+  project_id: 1
+  association_type_id: 1
+  association_name: MyString

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111214015243) do
+ActiveRecord::Schema.define(:version => 20111214022432) do
 
   create_table "association_types", :force => true do |t|
     t.string   "name"
@@ -66,6 +66,16 @@ ActiveRecord::Schema.define(:version => 20111214015243) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "desire_id"
+  end
+
+  create_table "model_associations", :force => true do |t|
+    t.integer  "primary_model_id"
+    t.integer  "secondary_model_id"
+    t.integer  "project_id"
+    t.integer  "association_type_id"
+    t.string   "association_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "model_attributes", :force => true do |t|

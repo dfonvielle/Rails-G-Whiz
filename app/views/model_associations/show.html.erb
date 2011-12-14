@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Primary model:</b>
+  <%= @model_association.primary_model_id %>
+</p>
+
+<p>
+  <b>Secondary model:</b>
+  <%= @model_association.secondary_model_id %>
+</p>
+
+<p>
+  <b>Project:</b>
+  <%= @model_association.project_id %>
+</p>
+
+<p>
+  <b>Association type:</b>
+  <%= @model_association.association_type_id %>
+</p>
+
+<p>
+  <b>Association name:</b>
+  <%= @model_association.association_name %>
+</p>
+
+
+<%= link_to 'Edit', edit_model_association_path(@model_association) %> |
+<%= link_to 'Back', model_associations_path %>

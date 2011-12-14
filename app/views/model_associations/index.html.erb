@@ -1,0 +1,31 @@
+<h1>Listing model_associations</h1>
+
+<table>
+  <tr>
+    <th>Primary model</th>
+    <th>Secondary model</th>
+    <th>Project</th>
+    <th>Association type</th>
+    <th>Association name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @model_associations.each do |model_association| %>
+  <tr>
+    <td><%= model_association.primary_model_id %></td>
+    <td><%= model_association.secondary_model_id %></td>
+    <td><%= model_association.project_id %></td>
+    <td><%= model_association.association_type_id %></td>
+    <td><%= model_association.association_name %></td>
+    <td><%= link_to 'Show', model_association %></td>
+    <td><%= link_to 'Edit', edit_model_association_path(model_association) %></td>
+    <td><%= link_to 'Destroy', model_association, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Model association', new_model_association_path %>
