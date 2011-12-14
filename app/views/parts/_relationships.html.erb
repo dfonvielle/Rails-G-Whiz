@@ -14,23 +14,40 @@
 
       <blockquote>Associations are relationships between different models. (Ex: belongs_to or has_many). In this section, you can identify the associations between different models if there are any.</blockquote>
 
-  <table>
-    <tr>
-      <th>Name</th>
-      <th>Relationships to Other Models</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
 
-  <% @models.each do |model| %>
-    <tr>
-      <td><%= model.name %></td>
-      <td><%="TBD" %></td>
-      <td><%= link_to "Edit" %></td>
-      <td><%= link_to "Delete"%></td>
-    </tr>
-  <% end %>
+    <table>
+      <tr>
+        <th>Model Name</th>
+        <th>Model Associations</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+    <% @models.each do |model| %>
+      <tr>
+    
+        <td><%= model.name.singularize %></td>
+          <% if model.secondary_model_associations.count < 1 %>
+            <td>Independent model!!! Flying Solo!!!</td>
+          <% else %>
+            <td>
+            <% model.secondary_model_associations.each do |secondary_model_association| %>
+              <%= secondary_model_association.secondary_model.name %> (Type and Name TBD) ...
+          <% end %>
+            </td>
+    <% end %>
+    
+        <td><%= link_to "Add/Modify Actions", new_model_association_path(:primary_model_id => model.id) %></td>
+    
+        <% if model.note.blank? %>
+            <td><%= link_to " Add Note", new_note_path(:part_id => model.id) %></td>
+        <% else %>
+            <td><%= link_to "See Notes", edit_note_path(model.note.id) %></td>
+        <% end %>
+    
+      </tr>
+    <% end %>
   </table>
 
   <br />
@@ -40,9 +57,6 @@
   <% end %>
   
 </p>
-
-
-
 
 
 
