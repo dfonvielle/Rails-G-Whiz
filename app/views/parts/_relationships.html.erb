@@ -38,7 +38,7 @@
             </td>
     <% end %>
     
-        <td><%= link_to "Add/Modify Actions", new_model_association_path(:primary_model_id => model.id) %></td>
+        <td><%= link_to "Add/Modify Associations", new_model_association_path(:primary_model_id => model.id) %></td>
     
         <% if model.note.blank? %>
             <td><%= link_to " Add Note", new_note_path(:part_id => model.id) %></td>

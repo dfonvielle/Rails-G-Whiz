@@ -2,7 +2,6 @@
   <% if @controller_action.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@controller_action.errors.count, "error") %> prohibited this controller_action from being saved:</h2>
-
       <ul>
       <% @controller_action.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -18,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :resource_view_id, "View" %><br />
-    <%= f.collection_select :resource_view_id, ResourceView.all, :id, :resource_url %>
+    <%= f.collection_select :resource_view_id, @project.resource_views, :id, :resource_url %>
   </div>
   <div class="actions">
     <%= f.submit %>

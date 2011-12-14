@@ -5,6 +5,8 @@ class Project < ActiveRecord::Base
   has_many :desires
   
   has_many :parts
+  
+  has_many :resource_views
 
   validates :name, :presence => true
   

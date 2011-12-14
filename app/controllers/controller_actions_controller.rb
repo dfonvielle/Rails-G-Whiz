@@ -26,6 +26,7 @@ class ControllerActionsController < ApplicationController
   def new
     @controller_action = ControllerAction.new
     @part = Part.find_by_id(params[:current_part_id])
+    @project = @part.project
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,6 +37,8 @@ class ControllerActionsController < ApplicationController
   # GET /controller_actions/1/edit
   def edit
     @controller_action = ControllerAction.find(params[:id])
+    @part = @controller_action.part
+    @project = @part.project
   end
 
   # POST /controller_actions

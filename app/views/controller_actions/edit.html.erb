@@ -1,6 +1,9 @@
-<h1>Editing controller_action</h1>
+<h2>Editing controller action for <%= @controller_action.part.name.pluralize %> controller</h2>
+
+<p>A controller action is a pairing of a controller method and a view.</p>
+
+<p>Conventional controller methods: index, show, new, create, edit, update, destroy</p>
 
 <%= render 'editform' %>
 
-<%= link_to 'Show', @controller_action %> |
-<%= link_to 'Back', controller_actions_path %>
+<%= link_to 'Back', project_path(@controller_action.part.project_id) %>
