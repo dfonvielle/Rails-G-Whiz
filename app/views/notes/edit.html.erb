@@ -6,6 +6,8 @@
   </p>
 
   <%= render 'form' %>
+  
+  <%= link_to 'Back', project_path(@note.desire.project.id) %>
 
 <% end %>
 
@@ -18,6 +20,8 @@
   </p>
 
   <%= render 'form' %>
+  
+    <%= link_to 'Back', project_path(@note.part.project.id) %>
 
 <% end %>
 

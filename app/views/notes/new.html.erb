@@ -6,6 +6,8 @@
   </p>
 
   <%= render 'form' %>
+  
+  <%= link_to 'Back', project_path(@note.desire.project.id) %>
 
 <% end %>
 
@@ -13,10 +15,12 @@
 <% if @note.part_id? %>
 
   <p>
-    <b><%= @note.part.name.pluralize.capitalize %>:</b>
+    <b><%= @note.part.name.pluralize %>:</b>
     <%= @note.part.description %>
   </p>
 
   <%= render 'form' %>
+  
+  <%= link_to 'Back', project_path(@note.part.project.id) %>
 
 <% end %>
