@@ -2,5 +2,4 @@
 
 <%= render 'editform' %>
 
-<%= link_to 'Show', @model_association %> |
-<%= link_to 'Back', model_associations_path %>
+<%= link_to 'Back', new_model_association_path(:primary_model_id => @model_association.primary_model_id) %>

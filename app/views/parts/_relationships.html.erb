@@ -28,12 +28,12 @@
       <tr>
     
         <td><%= model.name.singularize %></td>
-          <% if model.secondary_model_associations.count < 1 %>
+          <% if model.primary_model_associations.count < 1 %>
             <td>Independent model!!! Flying Solo!!!</td>
           <% else %>
             <td>
-            <% model.secondary_model_associations.each do |secondary_model_association| %>
-              <%= secondary_model_association.secondary_model.name %> (Type and Name TBD) ...
+            <% model.primary_model_associations.each do |primary_model_association| %>
+            <%= "#{primary_model_association.secondary_model.name.singularize} (#{primary_model_association.association_type.name} #{primary_model_association.association_name})" %>
           <% end %>
             </td>
     <% end %>
