@@ -25,6 +25,7 @@ class ModelAssociationsController < ApplicationController
   # GET /model_associations/new.json
   def new
     @model_association = ModelAssociation.new
+    @primary_model = Part.find_by_id(params[:primary_model_id])
 
     respond_to do |format|
       format.html # new.html.erb
