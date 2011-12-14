@@ -7,7 +7,7 @@
 <h3>Associations for <%= @primary_model.name.singularize  %> model</h3>
 
 <% @primary_model.primary_model_associations.each do |primary_model_association| %>
-  <p><%= primary_model_association.primary_model.name.singularize %> --> <%= primary_model_association.secondary_model.name.singularize %>
+  <p><%= "#{primary_model_association.secondary_model.name.singularize} (#{primary_model_association.association_type.name} #{primary_model_association.association_name})" %>
     <%= link_to "Edit", edit_model_association_path(primary_model_association.id) %>
     <%= link_to "Destroy", model_association_path(primary_model_association.id), :method => "delete", :confirm => "You sure about this?" %>
   </p>
