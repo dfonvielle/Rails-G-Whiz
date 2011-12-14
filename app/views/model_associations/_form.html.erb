@@ -10,28 +10,26 @@
       </ul>
     </div>
   <% end %>
-
+<h3>A <%= @primary_model.name.singularize %>:</h3>
   <div class="hidden field">
-    <br />
     <%= f.hidden_field :primary_model_id, :value => @primary_model.id %>
   </div>
+  <div class=" hidden field">
+    <%= f.hidden_field :project_id, :value => @primary_model.project.id %>
+  </div>
   <div class="field">
-    <%= f.label :association_type_id, "What kind of association?" %><br />
     <%= f.collection_select :association_type_id, AssociationType.all, :id, :name %>
   </div>
   <div class="field">
-    <%= f.label :secondary_model_id, "With which model?" %><br />
+    <%= f.text_field :association_name %> 
+    <i>(For example, you could put :user or :users)</i>
+  </div>
+  <div class="field">
+    <br />
+    <%= f.label :secondary_model_id, "Which model is #{@primary_model.name.singularize} connecting to?" %><br />
     <%= f.collection_select :secondary_model_id, @primary_model.project.parts.app_models, :id, :name %>
   </div>
-  <div class="field">
-    <%= f.label :project_id %><br />
-    <%= f.number_field :project_id %>
-  </div>
-  <div class="field">
-    <%= f.label :association_name %><br />
-    <%= f.text_field :association_name %>
-  </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Create Model Association!"%>
   </div>
 <% end %>
