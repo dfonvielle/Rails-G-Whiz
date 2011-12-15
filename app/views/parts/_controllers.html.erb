@@ -29,7 +29,13 @@
           <% else %>
             <td>
             <% controller.controller_actions.each do |controller_action| %>
-              <%= controller_action.controller_method %> --> <%= controller_action.resource_view.resource_url %> ...
+              
+              <% if controller_action.resource_view.blank? %>
+                <%= controller_action.controller_method %> --> <%= "NO VIEW!" %> ...
+              <% else %>
+                <%= controller_action.controller_method %> --> <%= controller_action.resource_view.resource_url %> ...
+              <% end %>
+            
           <% end %>
             </td>
     <% end %>
