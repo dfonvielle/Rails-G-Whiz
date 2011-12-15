@@ -1,4 +1,12 @@
 Ezmodeling::Application.routes.draw do
+  get "pages/home"
+
+  get "pages/about"
+
+  get "pages/contact"
+
+  get "pages/help"
+
   resources :model_associations
 
   resources :controller_actions
