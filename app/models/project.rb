@@ -7,11 +7,18 @@ class Project < ActiveRecord::Base
   has_many :parts
   
   has_many :resource_views
+  
+  has_many :model_associations
 
   validates :name, :presence => true
   
   validates :mvp, :presence => true
 
-  
+
+
+
+
+
+
   
 end

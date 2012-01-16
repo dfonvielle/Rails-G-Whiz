@@ -1,0 +1,44 @@
+digraph 
+  {
+    subgraph cluster_1
+  {
+    label = "Model Associations";
+    node [ colorscheme = set35, shape = box, style = filled, fillcolor = 5 ];
+    "Desire";
+    "Project";
+    "Model_Attribute"    [ fillcolor = 3,fillcolor = 3,fillcolor = 3 ];
+    "Part";
+    "Attribute_Type"     [ fillcolor = 3        ];
+    "Note";
+    "Resource_View";
+    "Controller_Action";
+    "Model_Association";
+    "Association_Type"   [ fillcolor = 3        ];
+    "Desire" -> "Project" [ color = blue,color = forestgreen ];
+    "Model_Attribute" -> "Part" [ color = blue,color = forestgreen ];
+    "Model_Attribute" -> "Attribute_Type" [ color = blue,color = forestgreen ];
+    "Part" -> "Project"  [ color = blue,color = forestgreen ];
+    "Note" -> "Desire"   [ color = blue,color = red ];
+    "Note" -> "Part"     [ color = blue,color = red ];
+    "Resource_View" -> "Part" [ color = blue,color = forestgreen ];
+    "Resource_View" -> "Project" [ color = blue,color = forestgreen ];
+    "Controller_Action" -> "Part" [ color = blue,color = forestgreen ];
+    "Controller_Action" -> "Resource_View" [ color = blue,color = forestgreen ];
+    "Model_Association" -> "Association_Type" [ color = blue         ];
+    "Model_Association" -> "Project" [ color = blue,color = forestgreen ];
+    "Model_Association" -> "Part" [ color = blue,color = blue,color = forestgreen,color = forestgreen ];
+  };
+    subgraph cluster_2
+  {
+    label = "Controllers";
+    node [ colorscheme = set35, shape = box, style = filled, fillcolor = 5 ];
+    "Desires"            [ fillcolor = 5        ];
+    "Projects"           [ fillcolor = 5        ];
+    "Parts"              [ fillcolor = 5        ];
+    "Notes"              [ fillcolor = 5        ];
+    "Resource_Views"     [ fillcolor = 5        ];
+    "Controller_Actions" [ fillcolor = 5        ];
+    "Model_Associations" [ fillcolor = 5        ];
+    "Pages"              [ fillcolor = 1        ];
+  };
+  }

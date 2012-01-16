@@ -1,5 +1,5 @@
 class ModelAssociation < ActiveRecord::Base
-  
+    
   belongs_to :association_type
   belongs_to :project
   

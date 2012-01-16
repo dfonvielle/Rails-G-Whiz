@@ -1,0 +1,31 @@
+digraph 
+  {
+    "Desires" -> "Projects";
+    "Desires" -> "Note";
+    "Projects" -> "Projects";
+    "Projects" -> "Desires";
+    "Projects" -> "Part";
+    "Projects" -> "Resource_View";
+    "Projects" -> "Model_Associations";
+    "Model_Attribute" -> "Part";
+    "Model_Attribute" -> "Attribute_Type";
+    "Part" -> "Projects";
+    "Part" -> "Model_Attribute";
+    "Part" -> "Resource_View";
+    "Part" -> "Controller_Actions";
+    "Part" -> "Note";
+    "Part" -> "Model_Associations";
+    "Part" -> "Desires";
+    "Attribute_Type" -> "Model_Attribute";
+    "Note" -> "Desires";
+    "Note" -> "Part";
+    "Resource_View" -> "Part";
+    "Resource_View" -> "Controller_Actions";
+    "Resource_View" -> "Projects";
+    "Controller_Actions" -> "Part";
+    "Controller_Actions" -> "Resource_View";
+    "Model_Associations" -> "Association_Type";
+    "Model_Associations" -> "Projects";
+    "Model_Associations" -> "Part";
+    "Model_Associations" -> "Desires";
+  }
