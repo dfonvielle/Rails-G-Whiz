@@ -2,7 +2,17 @@
 <h4><%= @project.mvp %></h4>
 
 
-<%= render "guidance" %>
+<p>
+  <blockquote><%= @project.achievement_message %></blockquote>
+</p>
+
+<p>
+  <blockquote><%= @project.priority_message %></blockquote>
+</p>
+
+<p>
+  <blockquote><%= @project.unlocked_message %></blockquote>
+</p>
 
 <%= render "bitbybit" %>
 
